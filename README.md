@@ -6,7 +6,7 @@ JPaint is a simple painting application built in Java that allows users to draw 
 * **Last Updated:** July 8, 2023 (Saturday)
 
 ## **Repository**
-GitHub: **https://github.com/imayden/JPaint/tree/master**
+GitHub: **https://github.com/imayden/JPaint.git**
 
 ## **Features**
 * Drawing black-filled rectangles on the canvas by pressing and dragging the mouse
