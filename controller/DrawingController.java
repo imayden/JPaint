@@ -50,6 +50,5 @@ public class DrawingController {
     }
 
     public void repaint() {
-        // This will be handled in Gui.java by calling Gui's repaint method.
     }
 }
