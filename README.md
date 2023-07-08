@@ -5,13 +5,16 @@ JPaint is a simple painting application built in Java that allows users to draw 
 * **Version Note:** Final Project Check-In 1 (Sprint 1, Ends on Week 4)
 * **Last Updated:** July 8, 2023 (Saturday)
 
+## **Repository**
+GitHub: **https://github.com/imayden/JPaint/tree/master**
+
 ## **Features**
 * Drawing black-filled rectangles on the canvas by pressing and dragging the mouse
 * Undo and redo functionality to revert and reapply drawing actions
 * Clearing the canvas to remove all drawn rectangles
-
-## **Repository**
-GitHub: **https://github.com/imayden/JPaint/tree/master**
+### **Screenshots**
+![Blank](v1.0/Blank.png)
+![Filled](v1.0/Filled.png)
 
 ## **Prerequisites**
 * Oracle Java Open JDK 19: **https://www.oracle.com/java/technologies/javase/jdk19-archive-downloads.html**
