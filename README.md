@@ -20,6 +20,25 @@ GitHub: **https://github.com/imayden/JPaint.git**
 * Oracle Java Open JDK 19: **https://www.oracle.com/java/technologies/javase/jdk19-archive-downloads.html**
 * Required Java libraries: ```java.awt```, ```java.swing```, ```java.util```
 
+## **Build and Run**
+To build and run the JPaint application, follow these steps:
+
+1. Install Oracle Java Open JDK 19 or later on your system.
+
+2. Clone or download the JPaint repository from the GitHub repository: https://github.com/imayden/JPaint.git
+
+3. Open a terminal or command prompt and navigate to the project's root directory.
+
+4. Compile the Java source files using the following command:
+```
+javac -d bin -cp src src/main/Main.java
+```
+5. Run the application using the following command:
+```
+java -cp bin main.Main
+```
+6. The JPaint application will launch, and you can start drawing black filled rectangles by pressing and dragging the mouse.
+
 ## **File Structure**
 The project follows the MVC design pattern, resulting in the following file structure:
 ```
