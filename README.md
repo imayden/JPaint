@@ -1,71 +1,93 @@
-# **JPaint**
-JPaint is a simple painting application built in Java that allows users to draw black-filled rectangles by pressing and dragging the mouse. It follows the Model-View-Controller (MVC) design pattern and adheres to the SOLID principles.
+# JPaint - Paint Application
 
-* **Version: 1.0**
-* **Version Note:** Final Project Check-In 1 (Sprint 1, Ends on Week 4)
-* **Last Updated:** July 8, 2023 (Saturday)
+## About
+- Version: 3.0
+- Last Update: July 20, 2023
+- Note: Final Project
+- GitHub: https://github.com/imayden/JPaint.git
+- Check-In Sprint: Check-In 1, Check-In 2, Check-In 3
+- E-Mail: ydeng24@depaul.edu
 
-## **Repository**
-GitHub: **https://github.com/imayden/JPaint.git**
+## Introduction
+JPaint is a paint application that allows users to draw various shapes on a canvas. It provides a user-friendly interface and supports multiple functionalities for creating, selecting, and manipulating shapes.
 
-## **Features**
-* Drawing black-filled rectangles on the canvas by pressing and dragging the mouse
-* Undo and redo functionality to revert and reapply drawing actions
-* Clearing the canvas to remove all drawn rectangles
-### **Screenshots**
-![Blank](v1.0/Blank.png)
-![Filled](v1.0/Filled.png)
+## Features
+#### Drawing Shapes (Check-In 1&2)
+Users can draw rectangles, ellipses, and triangles on the canvas using the mouse.
+#### Undo/Redo (Check-In 1&2&3)
+Support for undo and redo operations for shape modifications.
+#### Shape Shading (Check-In 2)
+Shapes can be filled, outlined, or both, based on user preferences.
+#### Color Selection (Check-In 2)
+Users can choose primary and secondary colors for drawing shapes.
+#### Shape Selection (Check-In 2)
+Users can select shapes by clicking on them.
+#### Moving Shapes (Check-In 2)
+Selected shapes can be moved to new positions on the canvas.
+#### Copy/Paste Shapes (Check-In 3)
+Users can copy selected shapes and paste them in different locations.
 
-## **Prerequisites**
-* Oracle Java Open JDK 19: **https://www.oracle.com/java/technologies/javase/jdk19-archive-downloads.html**
-* Required Java libraries: ```java.awt```, ```java.swing```, ```java.util```
+## Design Patterns Used
+#### Strategy Pattern
+The application uses the Strategy pattern to define different drawing strategies for shapes (rectangles, ellipses, triangles).
+#### Null Object Pattern
+The Null Object pattern is implemented to handle cases where no valid shape is selected.
+#### Proxy Pattern
+The Proxy pattern is used for selected shapes to provide a more efficient way of detecting shape selections.
+#### Singleton Pattern
+The Singleton pattern is employed for the MouseListener to ensure only one instance is used to handle mouse events.
+#### Command Pattern
+The application follows the Command pattern to implement undo and redo functionality for shape modifications.
 
-## **Build and Run**
-To build and run the JPaint application, follow these steps:
+## SOLID Principles
+The JPaint application adheres to the SOLID principles as follows:
+#### Single Responsibility Principle (SRP)
+Each class has a clear and single responsibility, promoting easy maintenance and understanding.
+#### Open/Closed Principle (OCP)
+The application is open for extension through strategies but closed for modification to existing code.
+#### Liskov Substitution Principle (LSP)
+Subclasses (shape strategies) can be used interchangeably with their parent class (shape drawing).
+#### Interface Segregation Principle (ISP)
+Interfaces are designed to be specific to the needs of their implementing classes.
+#### Dependency Inversion Principle (DIP)
+The application relies on abstractions (interfaces) rather than concrete implementations.
 
-1. Install Oracle Java Open JDK 19 or later on your system.
+## Usage
+To use the JPaint application:
+1. Ensure you have Oracle Java Open JDK 19 or later installed on your system.
+2. Clone or download the JPaint repository from GitHub: JPaint Repository
+3. Navigate to the project's root directory in a terminal or command prompt.
+4. Compile the Java source files using the command: javac -d bin -cp src src/main/Main.java
+5. Run the application using the command: java -cp bin main.Main
+6. The JPaint application will launch, and you can start drawing shapes on the canvas by pressing and dragging the mouse.
 
-2. Clone or download the JPaint repository from the GitHub repository: https://github.com/imayden/JPaint.git
-
-3. Open a terminal or command prompt and navigate to the project's root directory.
-
-4. Compile the Java source files using the following command:
+## File Structure
+The project follows the MVC (Model-View-Controller) design pattern, resulting in the following file structure:
 ```
-javac -d bin -cp src src/main/Main.java
+css
+Copy code
+JPaint/src
+├── controller/
+├── model/
+│   ├── Command/
+│   ├── Strategy/
+│   ├── Null Object/
+│   ├── Proxy/
+│   ├── Singleton/
+│   ├── dialogs/
+│   ├── interfaces/
+│   └── persistence/
+├── main/
+└── view/
+    ├── gui/
+    └── interfaces/
 ```
-5. Run the application using the following command:
-```
-java -cp bin main.Main
-```
-6. The JPaint application will launch, and you can start drawing black filled rectangles by pressing and dragging the mouse.
+Each directory contains classes and interfaces related to its specific responsibilities.
 
-## **File Structure**
-The project follows the MVC design pattern, resulting in the following file structure:
-```
-command
-- Action.java
-- ClearAction.java
-- DrawAction.java
+## Contribution and Feedback
+Contributions to JPaint are welcome! Feel free to submit issues or pull requests on the GitHub repository. Your feedback will help improve the application and make it more user-friendly.
 
-controller
-- DrawingController.java
+## Acknowledgments
+I would like to thank all the contributors for their valuable contributions to the JPaint project. Your efforts have helped shape this application into what it is today.
 
-main
-- Main.java
-
-model
-- MouseMode.java
-
-view
-- gui
--- ButtonPanel.java
--- DrawingPanel.java
--- Gui.java
-```
-
-## **Contact**
-* Author: Yiming Deng (Ayden)
-* DePaul Campus Connect Email: ydeng24@depaul.edu
-* Personal Email: ayden.yiming.deng@gmail.com
-
-Feel free to contact me if you have any questions or feedback regarding this project.
+##### Happy painting with JPaint!
