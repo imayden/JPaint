@@ -1,12 +1,12 @@
-package model.Command;
+package command;
 
 // ydeng24@depaul.edu
 
 import model.interfaces.ICommand;
 
-public class RedoCommand implements ICommand {
+public class UndoCommand implements ICommand {
     @Override
     public void run() {
-        CommandHistory.redo();
+        CommandInvoker.undo();
     }
 }

@@ -1,4 +1,4 @@
-package model.Command;
+package command;
 
 // ydeng24@depaul.edu
 
@@ -89,6 +89,6 @@ public class DrawCommand implements ICommand {
         DrawnShapesList.shapeList.add(shapeStrategy);
 
         // Add shapes to CommandHistory
-        CommandHistory.add(shapeStrategy);
+        CommandInvoker.add(shapeStrategy);
     }
 }

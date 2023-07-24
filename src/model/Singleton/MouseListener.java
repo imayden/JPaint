@@ -5,10 +5,11 @@ package model.Singleton;
 import model.persistence.ApplicationState;
 import view.interfaces.IPaintCanvas;
 import model.Point;
-import model.Command.SelectModeOption;
 
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+
+import command.MouseModeExecution;
 
 public class MouseListener extends MouseAdapter {
 
@@ -40,6 +41,7 @@ public class MouseListener extends MouseAdapter {
     @Override
     public void mouseReleased(MouseEvent e) {
         endPoint = new Point(e.getX(),e.getY());
-        SelectModeOption.clickedMode(startPoint, endPoint, paintCanvas, appState);
+        MouseModeExecution.clickedMode(startPoint, endPoint, paintCanvas, appState);
     }
 }
+

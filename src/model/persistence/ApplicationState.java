@@ -3,12 +3,13 @@ package model.persistence;
 // ydeng24@depaul.edu
 
 import model.*;
-import model.Command.*;
 import model.Proxy.SelectedOutlineProxy;
 import model.dialogs.DialogProvider;
 import model.interfaces.*;
 import view.interfaces.IUiModule;
 import java.io.Serializable;
+
+import command.*;
 
 public class ApplicationState implements IApplicationState, Serializable {
     private static final long serialVersionUID = -5545483996576839009L;
@@ -19,7 +20,7 @@ public class ApplicationState implements IApplicationState, Serializable {
     private ShapeColor activePrimaryColor;
     private ShapeColor activeSecondaryColor;
     private ShapeShadingType activeShapeShadingType;
-    private StartAndEndPointMode activeStartAndEndPointMode;
+    private MouseMode activeStartAndEndPointMode;
     private ICommand pasteOperation = null;
     private ICommand copyOperation = null;
     private static boolean undoSelected = false;
@@ -80,7 +81,7 @@ public class ApplicationState implements IApplicationState, Serializable {
     }
 
     @Override
-    public StartAndEndPointMode getActiveStartAndEndPointMode() {
+    public MouseMode getActiveStartAndEndPointMode() {
         return activeStartAndEndPointMode;
     }
 
@@ -89,7 +90,7 @@ public class ApplicationState implements IApplicationState, Serializable {
         activePrimaryColor = ShapeColor.BLUE;
         activeSecondaryColor = ShapeColor.GREEN;
         activeShapeShadingType = ShapeShadingType.FILLED_IN;
-        activeStartAndEndPointMode = StartAndEndPointMode.DRAW;
+        activeStartAndEndPointMode = MouseMode.DRAW;
     }
 
     // Checkin 1/2: Undo, Redo, Select, Move
@@ -102,7 +103,7 @@ public class ApplicationState implements IApplicationState, Serializable {
         undoSelected = MoveCommand.isUndoSelected();
         if(undoSelected) {
             undoShapeProxy = new SelectedOutlineProxy(undoOperation);
-            SelectModeOption.printShapeOutline(undoShapeProxy);
+            MouseModeExecution.printShapeOutline(undoShapeProxy);
         }
 
     }
@@ -114,7 +115,7 @@ public class ApplicationState implements IApplicationState, Serializable {
         redoSelected = MoveCommand.isRedoSelected();
         if(redoSelected) {
             redoShapeProxy = new SelectedOutlineProxy(redoOperation);
-            SelectModeOption.printShapeOutline(redoShapeProxy);
+            MouseModeExecution.printShapeOutline(redoShapeProxy);
         }
     }
 

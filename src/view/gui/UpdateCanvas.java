@@ -3,11 +3,12 @@ package view.gui;
 // ydeng24@depaul.edu
 
 import model.*;
-import model.Command.PasteCommand;
 import model.Proxy.SelectedShapeOutline;
 import model.interfaces.IShape;
 import view.interfaces.IPaintCanvas;
 import java.awt.*;
+
+import command.PasteCommand;
 
 // Update canvas
 public abstract class UpdateCanvas {

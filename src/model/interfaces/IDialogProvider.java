@@ -5,7 +5,7 @@ package model.interfaces;
 import model.ShapeColor;
 import model.ShapeShadingType;
 import model.ShapeType;
-import model.StartAndEndPointMode;
+import model.MouseMode;
 import view.interfaces.IDialogChoice;
 
 public interface IDialogProvider {
@@ -18,5 +18,5 @@ public interface IDialogProvider {
 
     IDialogChoice<ShapeShadingType> getChooseShadingTypeDialog();
 
-    IDialogChoice<StartAndEndPointMode> getChooseStartAndEndPointModeDialog();
+    IDialogChoice<MouseMode> getChooseStartAndEndPointModeDialog();
 }

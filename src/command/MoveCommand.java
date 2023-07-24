@@ -1,4 +1,4 @@
-package model.Command;
+package command;
 
 // ydeng24@depaul.edu
 
@@ -71,7 +71,7 @@ public class MoveCommand implements ICommand, IUndoable, ISelectedShapesList {
         // Canvas Refresh
         UpdateCanvas.update(paintCanvas);
         moveSelected = (selectedShapes.size() > 0) ? true : false;
-        CommandHistory.add(this);
+        CommandInvoker.add(this);
     }
 
 

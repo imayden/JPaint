@@ -1,4 +1,4 @@
-package model.Command;
+package command;
 
 // ydeng24@depaul.edu
 

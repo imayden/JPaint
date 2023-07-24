@@ -1,4 +1,4 @@
-package model.Command;
+package command;
 
 // ydeng24@depaul.edu
 
@@ -74,7 +74,7 @@ public class PasteCommand implements IClipboardCommand, ICommand, IUndoable {
         for (IShape temp : shapetoPaste) {
             if (temp != null) {
                 DrawnShapesList.shapeList.add(temp);
-                CommandHistory.add(this);
+                CommandInvoker.add(this);
             }
         }
         if (paintCanvas != null) {

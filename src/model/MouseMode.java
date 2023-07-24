@@ -2,7 +2,7 @@ package model;
 
 // ydeng24@depaul.edu
 
-public enum StartAndEndPointMode {
+public enum MouseMode {
     DRAW,
     SELECT,
     MOVE

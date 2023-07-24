@@ -1,9 +1,7 @@
 package model.Proxy;
 
-// ydeng24@depaul.edu
-
-import model.Command.MoveCommand;
-import model.Command.SelectCommand;
+import command.MoveCommand;
+import command.SelectCommand;
 import model.interfaces.ICommand;
 import model.interfaces.ISelectedShapeOutline;
 import model.persistence.ApplicationState;

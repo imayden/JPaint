@@ -1,4 +1,4 @@
-package model.Command;
+package command;
 
 // ydeng24@depaul.edu
 
@@ -38,7 +38,7 @@ public class DeleteCommand implements IClipboardCommand, ISelectedShapesList, IU
             // Update canvas
             UpdateCanvas.update(paintCanvas);
         }
-        CommandHistory.add(this);
+        CommandInvoker.add(this);
     }
 
     @Override

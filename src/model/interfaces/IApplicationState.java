@@ -5,7 +5,7 @@ package model.interfaces;
 import model.ShapeColor;
 import model.ShapeShadingType;
 import model.ShapeType;
-import model.StartAndEndPointMode;
+import model.MouseMode;
 
 public interface IApplicationState {
 
@@ -27,7 +27,7 @@ public interface IApplicationState {
 
     ShapeShadingType getActiveShapeShadingType();
 
-    StartAndEndPointMode getActiveStartAndEndPointMode();
+    MouseMode getActiveStartAndEndPointMode();
 
     // Checkin 1: Undo, Redo
     void undoCommand();
