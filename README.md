@@ -1,7 +1,7 @@
 # JPaint - Paint Application
 
 ## About
-- Version: 3.3
+- Version: 3.4
 - Last Update: July 26, 2023
 - Note: Final Project
 - GitHub: https://github.com/imayden/JPaint.git
