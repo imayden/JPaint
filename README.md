@@ -1,8 +1,8 @@
 # JPaint - Paint Application
 
 ## About
-- Version: 3.0
-- Last Update: July 20, 2023
+- Version: 3.3
+- Last Update: July 26, 2023
 - Note: Final Project
 - GitHub: https://github.com/imayden/JPaint.git
 - Check-In Sprint: Check-In 1, Check-In 2, Check-In 3
@@ -28,16 +28,18 @@ Selected shapes can be moved to new positions on the canvas.
 Users can copy selected shapes and paste them in different locations.
 
 ## Design Patterns Used
-#### Strategy Pattern
-The application uses the Strategy pattern to define different drawing strategies for shapes (rectangles, ellipses, triangles).
-#### Null Object Pattern
-The Null Object pattern is implemented to handle cases where no valid shape is selected.
-#### Proxy Pattern
-The Proxy pattern is used for selected shapes to provide a more efficient way of detecting shape selections.
-#### Singleton Pattern
-The Singleton pattern is employed for the MouseListener to ensure only one instance is used to handle mouse events.
 #### Command Pattern
-The application follows the Command pattern to implement undo and redo functionality for shape modifications.
+In this application, the Command Pattern is applied by the classes like Undo and Redo. The application follows the Command pattern to implement undo and redo functionality for shape modifications. The application follows the Command Pattern to implement undo and redo functionality for shape modifications. In this pattern, each operation (for example, undo and redo) is encapsulated as an object. This allows you to store operations or allow undoing operations.
+#### Factory Pattern
+In this application, the Factory Pattern is applied by the ShapeFactory class. The Factory Pattern is used in this application to create instances of different shapes. The Factory Pattern provides an interface for creating objects but allows subclasses to decide which class to instantiate. In this example, the createShape() method of the ShapeFactory class decides which type of shape to create based on the input parameters.
+#### Null Object Pattern
+In this application, the Null Object Pattern is applied by the NullShape class. The Null Object Pattern is implemented to handle cases where no valid shape is selected. In this pattern, when a method cannot return a valid object, it returns a null object instead of null. This null object behaves the same as a valid object but usually does not perform any operations. For example, when there is no matching shape type, the createShape() method of ShapeFactory will return a NullShape object.
+#### Proxy Pattern
+In this application, the Proxy Pattern is applied by the classes like OutlineHandlerProxy and RectangleOutline.The Proxy pattern is used for selected shapes to provide a more efficient way of detecting shape selections. The Proxy Pattern is used for selected shapes to provide a more efficient way of detecting shape selections. The Proxy Pattern provides a proxy for other objects to control access to this object. By using a proxy, we can optimize when performing high-cost operations and only perform these operations when they are truly needed.
+#### Singleton Pattern
+In this application, the Singleton Pattern is applied by the MouseListener class. The Singleton pattern is employed for the MouseListener to ensure only one instance is used to handle mouse events. The Singleton Pattern is employed for the MouseListener to ensure only one instance is used to handle mouse events. Here, we use the getInstance() method to get the only instance of the MouseListener class. If no instance has been created, getInstance() will call the private constructor MouseListener() to create a new instance. If an instance has already been created, then getInstance() directly returns this instance. This ensures that there is always only one instance of MouseListener.
+#### Strategy Pattern
+In this application, the Strategy Pattern is applied by the classes like Triangle and Rectangle. For example, the Triangle class uses the Strategy Pattern when it implements the IShape interface. Every class that implements the IShape interface defines a drawShape() method, which can be considered different drawing strategies. In other words, the Strategy Pattern is a strategy on how to draw shapes. We can choose different implementations of IShape based on the actual situation.
 
 ## SOLID Principles
 The JPaint application adheres to the SOLID principles as follows:
@@ -64,19 +66,19 @@ To use the JPaint application:
 ## File Structure
 The project follows the MVC (Model-View-Controller) design pattern, resulting in the following file structure:
 ```
-css
-Copy code
 JPaint/src
 ├── controller/
 ├── model/
-│   ├── Command/
-│   ├── Strategy/
-│   ├── Null Object/
-│   ├── Proxy/
-│   ├── Singleton/
 │   ├── dialogs/
 │   ├── interfaces/
 │   └── persistence/
+├── pattern/
+│   ├── command/
+│   ├── factory/
+│   ├── nullObject/
+│   ├── proxy/
+│   ├── singleton/
+│   ├── strategy/
 ├── main/
 └── view/
     ├── gui/
