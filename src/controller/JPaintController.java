@@ -39,7 +39,7 @@ public class JPaintController implements IJPaintController {
         uiModule.addEvent(EventName.DELETE, () -> applicationState.delete());
 
         // Checkin 4: Group, Ungroup
-        // uiModule.addEvent(EventName.GROUP, () -> applicationState.group());
-        // uiModule.addEvent(EventName.UNGROUP, () -> applicationState.ungroup());
+        uiModule.addEvent(EventName.GROUP, () -> applicationState.group());
+        uiModule.addEvent(EventName.UNGROUP, () -> applicationState.ungroup());
     }
 }

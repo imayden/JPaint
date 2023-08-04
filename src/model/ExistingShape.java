@@ -2,6 +2,6 @@ package model;
 
 // ydeng24@depaul.edu
 
-import model.interfaces.IShapeToManipulate;
+import model.interfaces.IExistingShape;
 
-public class ExistingShape implements IShapeToManipulate { }
+public class ExistingShape implements IExistingShape { }

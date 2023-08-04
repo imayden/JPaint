@@ -154,11 +154,19 @@ public class ApplicationState implements IApplicationState, Serializable {
 
     // Checkin 4: Group, Ungroup
 
-    // @Override
-    // public void group() {}
+    @Override
+    public void group() {
+        Group groupOperation = new Group();
+        groupOperation.execute();
+        System.out.println("Action: group");
+    }
 
-    // @Override
-    // public void ungroup() {}
+    @Override
+    public void ungroup() {
+        Ungroup ungroupOperation = new Ungroup();
+        ungroupOperation.execute();
+        System.out.println("Action: ungroup");
+    }
 
     @Override
     public String toString() {

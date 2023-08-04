@@ -18,6 +18,10 @@ public class MouseListener extends MouseAdapter {
     private static ApplicationState appState;
     private static MouseListener myMouseListenerObj;
 
+    public static IPaintCanvas getPaintCanvas() {
+        return MouseListener.paintCanvas;
+    };
+
     private MouseListener() { }
 
     public static MouseListener getInstance() {
@@ -42,5 +46,6 @@ public class MouseListener extends MouseAdapter {
         endPoint = new Point(e.getX(),e.getY());
         SelectMouseMode.clickedMode(startPoint, endPoint, paintCanvas, appState);
     }
+
 }
 

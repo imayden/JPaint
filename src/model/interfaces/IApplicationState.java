@@ -39,6 +39,6 @@ public interface IApplicationState {
     void delete();
 
     // Checkin 4: Group, Ungroup
-    // void groupCommand();
-    // void ungroupCommand();
+    void group();
+    void ungroup();
 }

@@ -46,25 +46,7 @@ public class Rectangle implements IShape {
         startPointY = minimum.getY();
     }
 
-    // @Override
-    // public void drawShape() {
-
-    //     Graphics2D graphics2d = paintCanvas.getGraphics2D();
-    //     if (shadeType.equals("filled")) {
-    //         graphics2d.setColor(primaryColor);
-    //         graphics2d.fillRect(startPointX, startPointY, width, height);
-    //     } else if (shadeType.equals("outline")) {
-    //         graphics2d.setStroke(new BasicStroke(5));
-    //         graphics2d.setColor(primaryColor);
-    //         graphics2d.drawRect(startPointX, startPointY, width, height);
-    //     } else if (shadeType.equals("filledAndOutline")) {
-    //         graphics2d.setColor(primaryColor);
-    //         graphics2d.fillRect(startPointX, startPointY, width, height);
-    //         graphics2d.setStroke(new BasicStroke(5));
-    //         graphics2d.setColor(secondaryColor);
-    //         graphics2d.drawRect(startPointX, startPointY, width, height);
-    //     }
-    // }
+   
 
     @Override
     public void drawShape() {

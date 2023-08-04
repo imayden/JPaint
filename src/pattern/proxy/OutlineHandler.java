@@ -3,6 +3,7 @@ package  pattern.proxy;
 // ydeng24@depaul.edu
 
 import model.ExistingShape;
+import model.ShapeGroup;
 import model.ActiveShape;
 import pattern.strategy.*;
 import pattern.factory.interfaces.IShape;
@@ -33,6 +34,10 @@ public class OutlineHandler implements IOutlineHandler {
                         int[] xValues = triangle.getXCoords();
                         int[] yValues = triangle.getYCoords();
                         drawTriangleOutline.draw(xValues, yValues, outlineShape.getPaintCanvas());
+                    }
+                    else if (outlineShape instanceof ShapeGroup) {
+                        drawRectangleOutline.draw(outlineShape.getStartPointX(), outlineShape.getStartPointY(),
+                                outlineShape.getWidth(), outlineShape.getHeight(), outlineShape.getPaintCanvas());
                     }
                 }
             }

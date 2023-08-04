@@ -6,6 +6,6 @@ import java.util.LinkedList;
 
 import pattern.factory.interfaces.IShape;
 
-public interface IShapeToManipulate {
+public interface IExistingShape {
     public LinkedList<IShape> shapeList = new LinkedList<>();
 }

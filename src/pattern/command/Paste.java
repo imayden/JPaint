@@ -57,6 +57,15 @@ public class Paste implements IClipboard, ICommand, IUndoable {
                     shapeStrategy = new Triangle(startPoint, endPoint, triangleShape.getPaintCanvas(), triangleShape.getShadeType(),
                             triangleShape.getPrimaryColor(), triangleShape.getSecondaryColor());
                     break;
+                // case "ShapeGroup":
+                    // Triangle triangleShape = (Triangle) shape;
+                    // int[] xValues = triangleShape.getXCoords();
+                    // int[] yValues = triangleShape.getYCoords();
+                    // startPoint = new Point(xValues[0] + 15, yValues[0] + 15);
+                    // endPoint = new Point(xValues[2] + 15, yValues[2] + 15);
+                    // shapeStrategy = new Triangle(startPoint, endPoint, triangleShape.getPaintCanvas(), triangleShape.getShadeType(),
+                    //         triangleShape.getPrimaryColor(), triangleShape.getSecondaryColor());
+                    // break;
                 default:
                     break;
             }
