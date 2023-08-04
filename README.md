@@ -1,11 +1,11 @@
 # JPaint - Paint Application
 
 ## About
-- Version: 3.4
-- Last Update: July 26, 2023
+- Version: 3.5
+- Last Update: Aug 3, 2023
 - Note: Final Project
 - GitHub: https://github.com/imayden/JPaint.git
-- Check-In Sprint: Check-In 1, Check-In 2, Check-In 3
+- Check-In Sprint: Check-In 1, Check-In 2, Check-In 3, Check-In 4(Partially implement)
 - E-Mail: ydeng24@depaul.edu
 
 ## Introduction
@@ -26,6 +26,8 @@ Users can select shapes by clicking on them.
 Selected shapes can be moved to new positions on the canvas.
 #### Copy/Paste Shapes (Check-In 3)
 Users can copy selected shapes and paste them in different locations.
+#### Copy/Paste Shapes (Check-In 4)
+Users can group and ungroup shapes when selecting them. 
 
 ## Design Patterns Used
 #### Command Pattern
