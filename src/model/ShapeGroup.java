@@ -62,12 +62,12 @@ public class ShapeGroup implements IShape, IActiveShape {
           ExistingShape.shapeList.remove(shape);
         }
 
-        drawBoundingBox();
+        drawOutline();
 
     }
   }
 
-  public void drawBoundingBox() {
+  public void drawOutline() {
     int xMin = Integer.MAX_VALUE;
     int yMin = Integer.MAX_VALUE;
     int xMax = Integer.MIN_VALUE;
