@@ -9,7 +9,9 @@ import pattern.strategy.*;
 import model.interfaces.IClipboard;
 import pattern.command.interfaces.ICommand;
 import pattern.command.interfaces.IUndoable;
+import pattern.composite.ShapeGroup;
 import pattern.factory.interfaces.IShape;
+import pattern.singleton.MouseListener;
 import view.gui.UpdateCanvas;
 import view.interfaces.IPaintCanvas;
 import java.util.LinkedList;
@@ -57,15 +59,20 @@ public class Paste implements IClipboard, ICommand, IUndoable {
                     shapeStrategy = new Triangle(startPoint, endPoint, triangleShape.getPaintCanvas(), triangleShape.getShadeType(),
                             triangleShape.getPrimaryColor(), triangleShape.getSecondaryColor());
                     break;
-                // case "ShapeGroup":
-                    // Triangle triangleShape = (Triangle) shape;
-                    // int[] xValues = triangleShape.getXCoords();
-                    // int[] yValues = triangleShape.getYCoords();
-                    // startPoint = new Point(xValues[0] + 15, yValues[0] + 15);
-                    // endPoint = new Point(xValues[2] + 15, yValues[2] + 15);
-                    // shapeStrategy = new Triangle(startPoint, endPoint, triangleShape.getPaintCanvas(), triangleShape.getShadeType(),
-                    //         triangleShape.getPrimaryColor(), triangleShape.getSecondaryColor());
-                    // break;
+                case "ShapeGroup":
+                    ShapeGroup originalGroup = (ShapeGroup) shape;
+                    ShapeGroup newGroup = new ShapeGroup(paintCanvas);
+                
+                    for (IShape innerShape : originalGroup.getShapeToGroup()) {
+                        // 递归地或通过相似的逻辑复制内部形状
+                        // 并将它们添加到新的 ShapeGroup
+                        // 例如:
+                        // IShape copiedInnerShape = copyShape(innerShape); // 自定义的复制逻辑
+                        // newGroup.getShapeToGroup().add(copiedInnerShape);
+                    }
+                
+                    shapeStrategy = newGroup; // 确保设置 shapeStrategy
+                    break;
                 default:
                     break;
             }

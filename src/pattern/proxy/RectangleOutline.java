@@ -25,11 +25,9 @@ public class RectangleOutline {
 
     private void drawOutline(Point[] points, IPaintCanvas paintCanvas) {
         Graphics2D graphics2d = paintCanvas.getGraphics2D();
-        Stroke stroke = new BasicStroke(OUTLINE_THICKNESS, BasicStroke.CAP_BUTT,
-                BasicStroke.JOIN_BEVEL, 1, DASH_PATTERN, 0);
+        Stroke stroke = new BasicStroke(OUTLINE_THICKNESS, BasicStroke.CAP_BUTT, BasicStroke.JOIN_BEVEL, 1, DASH_PATTERN, 0);
         graphics2d.setStroke(stroke);
         graphics2d.setColor(Color.BLACK);
-        graphics2d.drawRect(points[0].getX(), points[0].getY(), Math.abs(points[0].getX() - points[1].getX()),
-                Math.abs(points[0].getY() - points[1].getY()));
+        graphics2d.drawRect(points[0].getX(), points[0].getY(), Math.abs(points[0].getX() - points[1].getX()), Math.abs(points[0].getY() - points[1].getY()));
     }
 }

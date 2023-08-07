@@ -4,8 +4,8 @@ import java.util.List;
 
 import model.ActiveShape;
 import model.ExistingShape;
-import model.ShapeGroup;
 import pattern.command.interfaces.ICommand;
+import pattern.composite.ShapeGroup;
 import pattern.factory.interfaces.IShape;
 import pattern.singleton.MouseListener;
 import view.gui.UpdateCanvas;

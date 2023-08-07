@@ -3,7 +3,7 @@ package pattern.singleton;
 // ydeng24@depaul.edu
 
 import model.persistence.ApplicationState;
-import pattern.command.SelectMouseMode;
+import pattern.command.ActiveMouseMode;
 import view.interfaces.IPaintCanvas;
 import model.Point;
 
@@ -44,7 +44,7 @@ public class MouseListener extends MouseAdapter {
     @Override
     public void mouseReleased(MouseEvent e) {
         endPoint = new Point(e.getX(),e.getY());
-        SelectMouseMode.clickedMode(startPoint, endPoint, paintCanvas, appState);
+        ActiveMouseMode.clickedMode(startPoint, endPoint, paintCanvas, appState);
     }
 
 }

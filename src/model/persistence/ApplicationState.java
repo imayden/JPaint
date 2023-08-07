@@ -103,7 +103,7 @@ public class ApplicationState implements IApplicationState, Serializable {
         undoSelected = Move.isUndoSelected();
         if(undoSelected) {
             undoShapeProxy = new OutlineHanderProxy(undoOperation);
-            SelectMouseMode.printShapeOutline(undoShapeProxy);
+            ActiveMouseMode.printShapeOutline(undoShapeProxy);
         }
         System.out.println("Action: Undo");
 
@@ -116,7 +116,7 @@ public class ApplicationState implements IApplicationState, Serializable {
         redoSelected = Move.isRedoSelected();
         if(redoSelected) {
             redoShapeProxy = new OutlineHanderProxy(redoOperation);
-            SelectMouseMode.printShapeOutline(redoShapeProxy);
+            ActiveMouseMode.printShapeOutline(redoShapeProxy);
         }
         System.out.println("Action: Redo");
     }

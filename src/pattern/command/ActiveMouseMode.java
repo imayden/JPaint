@@ -10,7 +10,7 @@ import pattern.proxy.OutlineHanderProxy;
 import pattern.proxy.interfaces.IOutlineHandler;
 import view.interfaces.IPaintCanvas;
 
-public class SelectMouseMode {
+public class ActiveMouseMode {
 
     public static void clickedMode(Point startPoint, Point endPoint, IPaintCanvas paintCanvas, IApplicationState appState) {
 

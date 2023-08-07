@@ -3,9 +3,9 @@ package pattern.command;
 import java.util.ArrayList;
 import java.util.List;
 
-import model.ShapeGroup;
 import model.interfaces.IActiveShape;
 import pattern.command.interfaces.ICommand;
+import pattern.composite.ShapeGroup;
 import pattern.factory.interfaces.IShape;
 import pattern.singleton.MouseListener;
 
