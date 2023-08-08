@@ -33,7 +33,7 @@ public interface IApplicationState {
     void undo();
     void redo();
 
-    // Checkin 3: Copy, Paste, Delte
+    // Checkin 3: Copy, Paste, Delete
     void copy();
     void paste();
     void delete();

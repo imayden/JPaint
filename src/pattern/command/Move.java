@@ -12,8 +12,6 @@ import view.gui.UpdateCanvas;
 import view.interfaces.IPaintCanvas;
 import java.util.LinkedList;
 
-// Move shape
-
 public class Move implements ICommand, IUndoable, IActiveShape {
 
     private final IPaintCanvas paintCanvas;

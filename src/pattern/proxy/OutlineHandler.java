@@ -22,10 +22,12 @@ public class OutlineHandler implements IOutlineHandler {
             for (IShape outlineShape : ActiveShape.activeShape) {
                 if (outlineShape.equals(shape)) {
                     if (outlineShape instanceof Rectangle) {
-                        drawRectangleOutline.draw(outlineShape.getStartPointX(), outlineShape.getStartPointY(), outlineShape.getWidth(), outlineShape.getHeight(), outlineShape.getPaintCanvas());
+                        drawRectangleOutline.draw(outlineShape.getStartPointX(), outlineShape.getStartPointY(),
+                                outlineShape.getWidth(), outlineShape.getHeight(), outlineShape.getPaintCanvas());
                     }
                     else if (outlineShape instanceof Ellipse) {
-                        drawEllipseOutline.draw(outlineShape.getStartPointX(), outlineShape.getStartPointY(), outlineShape.getWidth(), outlineShape.getHeight(), outlineShape.getPaintCanvas());
+                        drawEllipseOutline.draw(outlineShape.getStartPointX(), outlineShape.getStartPointY(),
+                                outlineShape.getWidth(), outlineShape.getHeight(), outlineShape.getPaintCanvas());
                     }
                     else if (outlineShape instanceof Triangle) {
                         Triangle triangle = (Triangle) outlineShape;
@@ -34,7 +36,8 @@ public class OutlineHandler implements IOutlineHandler {
                         drawTriangleOutline.draw(xValues, yValues, outlineShape.getPaintCanvas());
                     }
                     else if (outlineShape instanceof ShapeGroup) {
-                        drawRectangleOutline.draw(outlineShape.getStartPointX(), outlineShape.getStartPointY(), outlineShape.getWidth(), outlineShape.getHeight(), outlineShape.getPaintCanvas());
+                        drawRectangleOutline.draw(outlineShape.getStartPointX(), outlineShape.getStartPointY(),
+                                outlineShape.getWidth(), outlineShape.getHeight(), outlineShape.getPaintCanvas());
                     }
                 }
             }

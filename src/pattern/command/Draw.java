@@ -8,7 +8,6 @@ import view.interfaces.IPaintCanvas;
 import pattern.factory.ShapeFactory;
 import pattern.factory.interfaces.IShape;
 import model.Point;
-
 import java.awt.*;
 
 public class Draw implements ICommand {

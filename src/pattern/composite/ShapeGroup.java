@@ -1,30 +1,31 @@
 package pattern.composite;
 
+import model.ExistingShape;
+import model.Point;
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 
-import model.ActiveShape;
-import model.ExistingShape;
-import model.Point;
-import model.interfaces.IActiveShape;
+import pattern.command.CommandInvoker;
 import pattern.factory.interfaces.IShape;
+import pattern.proxy.RectangleOutline;
+import pattern.singleton.MouseListener;
+import pattern.strategy.Ellipse;
+import pattern.strategy.Triangle;
+import pattern.strategy.Rectangle;
 import view.gui.UpdateCanvas;
 import view.interfaces.IPaintCanvas;
 import java.awt.*;
 
-public class ShapeGroup implements IShape, IActiveShape {
+public class ShapeGroup implements IShape {
 
     private IPaintCanvas paintCanvas;
     private Graphics2D graphics2d;
 
-    private Shape groupOutline;
     private List<IShape> shapeToGroup = new ArrayList<>();
 
     private Point startPoint;
     private Point endPoint;
-    private Point minimum;
-    private Point maximum;
     private int width;
     private int height;
     private String shadeType;
@@ -32,9 +33,55 @@ public class ShapeGroup implements IShape, IActiveShape {
     private Color secondaryColor;
     private int startPointX, startPointY;
 
+    public ShapeGroup() {
+    }
+
     public ShapeGroup(IPaintCanvas paintCanvas) {
         this.paintCanvas = paintCanvas;
         this.graphics2d = paintCanvas.getGraphics2D();
+    }
+
+    public ShapeGroup(ShapeGroup shapeGroup) {
+
+        for (IShape shape : shapeGroup.shapeToGroup) {
+            Point startPoint = new Point(shape.getStartPointX(), shape.getStartPointY());
+            Point endPoint = new Point(shape.getStartPointX() + shape.getWidth(),
+                    shape.getStartPointY() + shape.getHeight());
+            switch (shape.getClass().getSimpleName()) {
+                case "Rectangle":
+                    Rectangle rectShape = (Rectangle) shape;
+                    shapeToGroup.add((IShape) new Rectangle(startPoint, endPoint, rectShape.getPaintCanvas(),
+                            rectShape.getShadeType(), rectShape.getPrimaryColor(), rectShape.getSecondaryColor()));
+                    break;
+                case "Ellipse":
+                    Ellipse ellipseShape = (Ellipse) shape;
+                    shapeToGroup.add((IShape) new Ellipse(startPoint, endPoint, ellipseShape.getPaintCanvas(),
+                            ellipseShape.getShadeType(), ellipseShape.getPrimaryColor(),
+                            ellipseShape.getSecondaryColor()));
+                    break;
+                case "Triangle":
+                    Triangle triangleShape = (Triangle) shape;
+                    int[] xValues = triangleShape.getXCoords();
+                    int[] yValues = triangleShape.getYCoords();
+                    startPoint = new Point(xValues[0], yValues[0]);
+                    endPoint = new Point(xValues[2], yValues[2]);
+                    shapeToGroup.add((IShape) new Triangle(startPoint, endPoint, triangleShape.getPaintCanvas(),
+                            triangleShape.getShadeType(), triangleShape.getPrimaryColor(),
+                            triangleShape.getSecondaryColor()));
+                    break;
+                case "ShapeGroup":
+                    shapeToGroup.add((IShape) new ShapeGroup((ShapeGroup) shape));
+                    break;
+                default:
+                    break;
+            }
+        }
+        width = shapeGroup.width;
+        height = shapeGroup.height;
+        startPointX = shapeGroup.startPointX;
+        startPointY = shapeGroup.startPointY;
+        paintCanvas = shapeGroup.paintCanvas;
+
     }
 
     public void group() {
@@ -45,7 +92,10 @@ public class ShapeGroup implements IShape, IActiveShape {
                     shapeToGroup.add(shape);
                 }
             }
-            shapeGroupList.remove(shapeToGroup);
+            for (IShape shape : shapeToGroup) {
+                shapeGroupList.remove(shape);
+            }
+
             shapeGroupList.add(this);
 
             ExistingShape.shapeList.add(this);
@@ -53,12 +103,15 @@ public class ShapeGroup implements IShape, IActiveShape {
                 ExistingShape.shapeList.remove(shape);
             }
 
-            drawOutline();
+            UpdateCanvas.update(MouseListener.getPaintCanvas());
+            drawBoundingBox();
 
         }
+
+        CommandInvoker.add(this);
     }
 
-    public void drawOutline() {
+    public void drawBoundingBox() {
         int xMin = Integer.MAX_VALUE;
         int yMin = Integer.MAX_VALUE;
         int xMax = Integer.MIN_VALUE;
@@ -72,31 +125,26 @@ public class ShapeGroup implements IShape, IActiveShape {
 
         }
 
-        // Adding the offset to the coordinates
-        xMin -= 5;
-        yMin -= 5;
-        xMax += 5; // Since we already subtracted 5, adding 10 in total
-        yMax += 5; // Same here
-
         width = xMax - xMin;
         height = yMax - yMin;
         startPointX = xMin;
         startPointY = yMin;
 
-        graphics2d.setColor(Color.RED);
-        float OUTLINE_WIDTH = 3;
-        graphics2d.setStroke(new BasicStroke(OUTLINE_WIDTH));
+        System.out.println("group_xMin: " + xMin);
+        System.out.println("group_width: " + (xMax - xMin));
+        System.out.println("group_xMax: " + xMax);
+        System.out.println("group_height: " + (yMax - yMin));
 
-        float[] dashPattern = { 10, 10 };
-        graphics2d.setStroke(
-                new BasicStroke(OUTLINE_WIDTH, BasicStroke.CAP_BUTT, BasicStroke.JOIN_MITER, 10, dashPattern, 0));
-
-        Rectangle rect = new Rectangle(xMin, yMin, xMax - xMin, yMax - yMin);
-        graphics2d.draw(rect);
+        RectangleOutline rectangleOutline = new RectangleOutline();
+        rectangleOutline.draw(xMin, yMin, xMax - xMin, yMax - yMin, paintCanvas);
     }
 
     public List<IShape> getShapeToGroup() {
         return this.shapeToGroup;
+    }
+
+    public void setShapeToGroup(List<IShape> list) {
+        this.shapeToGroup = list;
     }
 
     @Override
@@ -178,15 +226,20 @@ public class ShapeGroup implements IShape, IActiveShape {
 
     @Override
     public void undo() {
-        ExistingShape.shapeList.removeLast();
-        if (ActiveShape.activeShape.contains(this))
-            ActiveShape.activeShape.removeLast();
+        for (IShape shape : shapeToGroup) {
+            ExistingShape.shapeList.add(shape);
+        }
+        ExistingShape.shapeList.remove(this);
         UpdateCanvas.update(paintCanvas);
     }
 
     @Override
     public void redo() {
+        for (IShape shape : shapeToGroup) {
+            ExistingShape.shapeList.remove(shape);
+        }
         ExistingShape.shapeList.add(this);
         UpdateCanvas.update(paintCanvas);
     }
+
 }

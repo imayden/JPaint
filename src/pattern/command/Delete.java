@@ -57,6 +57,13 @@ public class Delete implements IClipboard, IActiveShape, IUndoable {
 
     @Override
     public void redo() {
-        this.execute();
+        shapesToDelete.forEach(shape -> {
+            activeShape.remove(shape);
+            ExistingShape.shapeList.remove(shape);
+        });
+    
+        if (paintCanvas != null) {
+            UpdateCanvas.update(paintCanvas);
+        }
     }
 }

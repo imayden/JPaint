@@ -18,13 +18,13 @@ public class OutlineHanderProxy implements IOutlineHandler {
     public void outline() {
         switch(cmd.getClass().getSimpleName()) {
             case "Select":
-                performOutlineIfConditionMet(((Select) cmd).isSelected());
+                performOutlineIfConditionMet(Select.isSelected());
                 break;
             case "Move":
-                performOutlineIfConditionMet(((Move) cmd).isMoveSelected());
+                performOutlineIfConditionMet(Move.isMoveSelected());
                 break;
             case "ApplicationState":
-                performOutlineIfConditionMet(((ApplicationState) cmd).isUndoSelected() || ((ApplicationState) cmd).isRedoSelected());
+                performOutlineIfConditionMet(ApplicationState.isUndoSelected() || ApplicationState.isRedoSelected());
                 break;
             default:
                 System.out.println("Other actions");

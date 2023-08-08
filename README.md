@@ -1,11 +1,11 @@
 # JPaint - Paint Application
 
 ## About
-- Version: 3.5
-- Last Update: Aug 3, 2023
+- Version: 4.0
+- Last Update: Aug 7, 2023
 - Note: Final Project
 - GitHub: https://github.com/imayden/JPaint.git
-- Check-In Sprint: Check-In 1, Check-In 2, Check-In 3, Check-In 4(Partially implement)
+- Check-In Sprint: Check-In 1, Check-In 2, Check-In 3, Check-In 4(partially implemented)
 - E-Mail: ydeng24@depaul.edu
 
 ## Introduction
@@ -28,10 +28,14 @@ Selected shapes can be moved to new positions on the canvas.
 Users can copy selected shapes and paste them in different locations.
 #### Copy/Paste Shapes (Check-In 4)
 Users can group and ungroup shapes when selecting them. 
+##### Current Issues (Aug 7, 2023)
+Unable to undo and redo the operations done by Ungroup
 
 ## Design Patterns Used
 #### Command Pattern
 In this application, the Command Pattern is applied by the classes like Undo and Redo. The application follows the Command pattern to implement undo and redo functionality for shape modifications. The application follows the Command Pattern to implement undo and redo functionality for shape modifications. In this pattern, each operation (for example, undo and redo) is encapsulated as an object. This allows you to store operations or allow undoing operations.
+#### Composite Pattern
+In this application, the Composite Pattern is embodied in the ShapeGroup class, which handles grouping of shapes like rectangles, ellipses, and triangles. Shapes and shape groups are treated uniformly through a common IShape interface, allowing them to be nested at multiple levels. A ShapeGroup can contain individual shapes or other ShapeGroups, forming a tree structure. This design facilitates operations like drawing, grouping, and ungrouping, making it easy to manage complex hierarchies of shapes within the system.
 #### Factory Pattern
 In this application, the Factory Pattern is applied by the ShapeFactory class. The Factory Pattern is used in this application to create instances of different shapes. The Factory Pattern provides an interface for creating objects but allows subclasses to decide which class to instantiate. In this example, the createShape() method of the ShapeFactory class decides which type of shape to create based on the input parameters.
 #### Null Object Pattern
@@ -76,6 +80,7 @@ JPaint/src
 │   └── persistence/
 ├── pattern/
 │   ├── command/
+│   ├── composite/
 │   ├── factory/
 │   ├── nullObject/
 │   ├── proxy/

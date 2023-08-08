@@ -46,7 +46,6 @@ public class Select implements ICommand, IActiveShape {
         System.out.println("minimum: " + minimum);
         System.out.println("minimum: " +  minimum);
 
-        // Collision Detection Algo.
         for (IShape shape : ExistingShape.shapeList)
         {
                 if (shape.getStartPointX() < minimum.getX() + width &&
@@ -58,8 +57,8 @@ public class Select implements ICommand, IActiveShape {
 
             }
         }
-        System.out.println("ExistingShape.shapeList.size: " + ExistingShape.shapeList.size());
-        System.out.println("activeShape.size: " + activeShape.size());
+        System.out.println("The number of the existing shapes on the canvas: " + ExistingShape.shapeList.size());
+        System.out.println("The number of the active(selected) shapes: " + activeShape.size());
 
         isSelected = (activeShape.size() > 0) ? true : false;
 

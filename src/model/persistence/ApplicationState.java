@@ -93,7 +93,7 @@ public class ApplicationState implements IApplicationState, Serializable {
         activeMouseMode = MouseMode.DRAW;
     }
 
-    // Checkin 1/2: Undo, Redo, Select, Move
+    // Checkin 1: Undo, Redo
 
     @Override
     public void undo()
@@ -129,7 +129,7 @@ public class ApplicationState implements IApplicationState, Serializable {
         return redoSelected;
     }
 
-    // Checkin 3: Copy, Paste, Delte
+    // Checkin 3: Copy, Paste, Delete
     
     @Override
     public void copy() {
@@ -158,14 +158,14 @@ public class ApplicationState implements IApplicationState, Serializable {
     public void group() {
         Group groupOperation = new Group();
         groupOperation.execute();
-        System.out.println("Action: group");
+        System.out.println("Action: Group");
     }
 
     @Override
     public void ungroup() {
         Ungroup ungroupOperation = new Ungroup();
         ungroupOperation.execute();
-        System.out.println("Action: ungroup");
+        System.out.println("Action: Ungroup");
     }
 
     @Override

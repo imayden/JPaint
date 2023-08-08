@@ -10,5 +10,6 @@ public class Copy implements ICommand, IClipboard, IActiveShape {
     public void execute() {
         clipboard.clear();
         activeShape.forEach(shape -> clipboard.add(shape));
+        System.out.println("The number of the shapes on the clipboard: " + clipboard.size());
     }
 }
