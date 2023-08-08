@@ -13,23 +13,23 @@ JPaint is a paint application that allows users to draw various shapes on a canv
 
 ## Features
 #### Drawing Shapes (Check-In 1&2)
-Users can draw rectangles, ellipses, and triangles on the canvas using the mouse.
+- Users can draw rectangles, ellipses, and triangles on the canvas using the mouse.
 #### Undo/Redo (Check-In 1&2&3)
-Support for undo and redo operations for shape modifications.
+- Support for undo and redo operations for shape modifications.
 #### Shape Shading (Check-In 2)
-Shapes can be filled, outlined, or both, based on user preferences.
+- Shapes can be filled, outlined, or both, based on user preferences.
 #### Color Selection (Check-In 2)
-Users can choose primary and secondary colors for drawing shapes.
+- Users can choose primary and secondary colors for drawing shapes.
 #### Shape Selection (Check-In 2)
-Users can select shapes by clicking on them.
+- Users can select shapes by clicking on them.
 #### Moving Shapes (Check-In 2)
-Selected shapes can be moved to new positions on the canvas.
+- Selected shapes can be moved to new positions on the canvas.
 #### Copy/Paste Shapes (Check-In 3)
-Users can copy selected shapes and paste them in different locations.
+- Users can copy selected shapes and paste them in different locations.
 #### Copy/Paste Shapes (Check-In 4)
-Users can group and ungroup shapes when selecting them. 
+- Users can group and ungroup shapes when selecting them. 
 ##### Current Issues (Aug 7, 2023)
-Unable to undo and redo the operations done by Ungroup
+- Unable to undo and redo the operations done by Ungroup
 
 ## Design Patterns Used
 #### Command Pattern
