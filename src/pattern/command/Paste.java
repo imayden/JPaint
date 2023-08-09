@@ -122,3 +122,51 @@ public class Paste implements IClipboard, ICommand, IUndoable {
         return isPasteSelected;
     }
 }
+
+// package pattern.command;
+
+// // ydeng24@depaul.edu
+
+// import model.ExistingShape;
+// import model.Point;
+// import model.ActiveShape;
+// import pattern.strategy.*;
+// import model.interfaces.IClipboard;
+// import pattern.command.interfaces.ICommand;
+// import pattern.command.interfaces.IUndoable;
+// import pattern.composite.ShapeGroup;
+// import pattern.factory.interfaces.IShape;
+// import view.gui.UpdateCanvas;
+// import view.interfaces.IPaintCanvas;
+
+// import java.awt.Component;
+// import java.util.LinkedList;
+
+// public class Paste implements IClipboard, IUndoable, ICommand {
+
+//     private PasteHandler handler;
+
+//     public Paste() {     
+//         System.out.println("The number of the shapes on the clipboard: " + clipboard.size());
+//         handler = new PasteHandler();
+
+//     }
+
+//     public void execute() {
+//         handler.execute();
+//         CommandInvoker.add(this);
+//     }
+
+//     @Override
+//     public void undo() {
+//         handler.undo();
+//     }
+
+//     @Override
+//     public void redo() {
+//         handler.redo();
+//     }
+
+
+// }
+

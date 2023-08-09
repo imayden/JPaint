@@ -1,69 +1,30 @@
 package pattern.command;
 
-import model.*;
-import pattern.strategy.ShapeDrawing;
-import pattern.command.interfaces.*;
-import model.interfaces.*;
-import view.interfaces.IPaintCanvas;
-import pattern.factory.ShapeFactory;
-import pattern.factory.interfaces.IShape;
-import pattern.flyweight.ShapeColorFactory;
 import model.Point;
-import java.awt.*;
+import model.interfaces.IApplicationState;
+import pattern.command.interfaces.ICommand;
+import view.interfaces.IPaintCanvas;
+
 
 public class Draw implements ICommand {
-    Point startPoint;
-    Point endPoint;
-    IPaintCanvas paintCanvas;
-    IApplicationState appState;
-    ShapeDrawing drawShapeContext;
+    private Point startPoint;
+    private Point endPoint;
+    private IPaintCanvas paintCanvas;
+    private IApplicationState appState;
+    private DrawHandler drawHandler;
 
+    // Constructor Injection Pattern
     public Draw(Point startPoint, Point endPoint, IPaintCanvas paintCanvas, IApplicationState appState) {
         this.startPoint = startPoint;
         this.endPoint = endPoint;
         this.paintCanvas = paintCanvas;
         this.appState = appState;
-        this.drawShapeContext = new ShapeDrawing();
+        this.drawHandler = new DrawHandler(startPoint, endPoint, paintCanvas, appState);
     }
 
     @Override
     public void execute() {
-
-        Color primaryColor = ColorUtils.getPrimaryColor(appState);
-        Color secondaryColor = ColorUtils.getSecondaryColor(appState);
-        String shadingType = ShadeUtils.getShadingType(appState);
-
-        IShape shapeStrategy = ShapeFactory.createShape(appState, startPoint, endPoint, paintCanvas, shadingType, primaryColor, secondaryColor);
-
-        drawShapeContext.setDrawShapeStrategy(shapeStrategy);
-
-        drawShapeContext.drawShape();
-        ExistingShape.shapeList.add(shapeStrategy);
-        CommandInvoker.add(shapeStrategy);
+        drawHandler.handleDraw();
     }
 }
 
-class ColorUtils {
-    static Color getPrimaryColor(IApplicationState appState) {
-        return ShapeColorFactory.colorsMap.get(appState.getActivePrimaryColor());
-    }
-
-    static Color getSecondaryColor(IApplicationState appState) {
-        return ShapeColorFactory.colorsMap.get(appState.getActiveSecondaryColor());
-    }
-}
-
-class ShadeUtils {
-    static String getShadingType(IApplicationState appState) {
-        switch (appState.getActiveShapeShadingType()) {
-            case FILLED_IN:
-                return "filled";
-            case OUTLINE:
-                return "outline";
-            case OUTLINE_AND_FILLED_IN:
-                return "filledAndOutline";
-            default:
-                return null;
-        }
-    }
-}
