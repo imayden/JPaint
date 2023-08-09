@@ -4,8 +4,8 @@ package main;
 
 import controller.JPaintController;
 import controller.interfaces.IJPaintController;
-import model.ShapeColor;
 import model.persistence.ApplicationState;
+import pattern.flyweight.ShapeColorFactory;
 import pattern.singleton.MouseListener;
 import view.gui.Gui;
 import view.gui.GuiWindow;
@@ -24,7 +24,7 @@ public class Main {
         IJPaintController controller = new JPaintController(uiModule, appState);
         controller.setup();
 
-        ShapeColor.getMap();
+        ShapeColorFactory.getMap();
 
         MouseListener mouseListener = MouseListener.getInstance();
         paintCanvas.addMouseListener(mouseListener);

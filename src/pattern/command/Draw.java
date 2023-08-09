@@ -7,6 +7,7 @@ import model.interfaces.*;
 import view.interfaces.IPaintCanvas;
 import pattern.factory.ShapeFactory;
 import pattern.factory.interfaces.IShape;
+import pattern.flyweight.ShapeColorFactory;
 import model.Point;
 import java.awt.*;
 
@@ -44,11 +45,11 @@ public class Draw implements ICommand {
 
 class ColorUtils {
     static Color getPrimaryColor(IApplicationState appState) {
-        return ShapeColor.colorsMap.get(appState.getActivePrimaryColor());
+        return ShapeColorFactory.colorsMap.get(appState.getActivePrimaryColor());
     }
 
     static Color getSecondaryColor(IApplicationState appState) {
-        return ShapeColor.colorsMap.get(appState.getActiveSecondaryColor());
+        return ShapeColorFactory.colorsMap.get(appState.getActiveSecondaryColor());
     }
 }
 
