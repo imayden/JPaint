@@ -1,8 +1,8 @@
 # JPaint - Paint Application
 
 ## About
-- Version: 4.0
-- Last Update: Aug 7, 2023
+- Version: 4.1
+- Last Update: Aug 8, 2023
 - Note: Final Project
 - GitHub: https://github.com/imayden/JPaint.git
 - Check-In Sprint: Check-In 1, Check-In 2, Check-In 3, Check-In 4(partially implemented)
@@ -38,6 +38,8 @@ In this application, the Command Pattern is applied by the classes like Undo and
 In this application, the Composite Pattern is embodied in the ShapeGroup class, which handles grouping of shapes like rectangles, ellipses, and triangles. Shapes and shape groups are treated uniformly through a common IShape interface, allowing them to be nested at multiple levels. A ShapeGroup can contain individual shapes or other ShapeGroups, forming a tree structure. This design facilitates operations like drawing, grouping, and ungrouping, making it easy to manage complex hierarchies of shapes within the system.
 #### Factory Pattern
 In this application, the Factory Pattern is applied by the ShapeFactory class. The Factory Pattern is used in this application to create instances of different shapes. The Factory Pattern provides an interface for creating objects but allows subclasses to decide which class to instantiate. In this example, the createShape() method of the ShapeFactory class decides which type of shape to create based on the input parameters.
+#### Flyweight Pattern
+In this application, the Flyweight Pattern is applied by the ShapeColorFactory class. It demonstrates the Flyweight Pattern's application in managing colors efficiently, and employs the Flyweight Pattern to share and reuse color objects, reducing memory consumption. The colorsMap utilizes an EnumMap to map ShapeColor enums to corresponding Color objects, facilitating quick retrieval of predefined colors. This pattern promotes memory optimization by reusing similar objects, promoting performance gains. The getMap() method returns an unmodifiable version of the color map, maintaining consistency in shared states.
 #### Null Object Pattern
 In this application, the Null Object Pattern is applied by the NullShape class. The Null Object Pattern is implemented to handle cases where no valid shape is selected. In this pattern, when a method cannot return a valid object, it returns a null object instead of null. This null object behaves the same as a valid object but usually does not perform any operations. For example, when there is no matching shape type, the createShape() method of ShapeFactory will return a NullShape object.
 #### Proxy Pattern
