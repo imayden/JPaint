@@ -83,7 +83,8 @@ JPaint/src
 ├── pattern/
 │   ├── command/
 │   ├── composite/
-│   ├── factory/
+│   ├── factory/ 
+│   ├── flyweight/
 │   ├── nullObject/
 │   ├── proxy/
 │   ├── singleton/
