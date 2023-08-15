@@ -1,11 +1,9 @@
 package model.interfaces;
 
-// ydeng24@depaul.edu
-
-import model.ShapeColor;
-import model.ShapeShadingType;
-import model.ShapeType;
-import model.MouseMode;
+import model.colorUtilities.ShapeColor;
+import model.mouseUtilities.MouseMode;
+import model.shadeUtilities.ShapeShadingType;
+import model.shapeUtilities.ShapeType;
 
 public interface IApplicationState {
 

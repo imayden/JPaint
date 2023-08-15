@@ -4,9 +4,9 @@ package main;
 
 import controller.JPaintController;
 import controller.interfaces.IJPaintController;
+import model.colorUtilities.ShapeColorFactory;
+import model.mouseUtilities.MouseListener;
 import model.persistence.ApplicationState;
-import pattern.flyweight.ShapeColorFactory;
-import pattern.singleton.MouseListener;
 import view.gui.Gui;
 import view.gui.GuiWindow;
 import view.gui.PaintCanvas;
@@ -31,3 +31,4 @@ public class Main {
         mouseListener.setSettings(paintCanvas, appState);
     }
 }
+

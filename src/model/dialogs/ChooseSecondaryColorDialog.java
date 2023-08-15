@@ -1,8 +1,6 @@
 package model.dialogs;
 
-// ydeng24@depaul.edu
-
-import model.ShapeColor;
+import model.colorUtilities.ShapeColor;
 import model.interfaces.IApplicationState;
 import view.interfaces.IDialogChoice;
 

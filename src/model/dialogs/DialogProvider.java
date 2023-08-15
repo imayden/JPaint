@@ -1,13 +1,11 @@
 package model.dialogs;
 
-// ydeng24@depaul.edu
-
-import model.ShapeColor;
-import model.ShapeShadingType;
-import model.ShapeType;
-import model.MouseMode;
+import model.colorUtilities.ShapeColor;
 import model.interfaces.IApplicationState;
 import model.interfaces.IDialogProvider;
+import model.mouseUtilities.MouseMode;
+import model.shadeUtilities.ShapeShadingType;
+import model.shapeUtilities.ShapeType;
 import view.interfaces.IDialogChoice;
 
 public class DialogProvider implements IDialogProvider {

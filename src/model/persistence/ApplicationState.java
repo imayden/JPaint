@@ -3,11 +3,14 @@ package model.persistence;
 // ydeng24@depaul.edu
 
 import model.*;
+import model.colorUtilities.ShapeColor;
+import model.command.*;
 import model.dialogs.DialogProvider;
 import model.interfaces.*;
-import pattern.command.*;
-import pattern.command.interfaces.ICommand;
-import pattern.proxy.OutlineHanderProxy;
+import model.mouseUtilities.MouseMode;
+import model.shadeUtilities.ShapeShadingType;
+import model.shapeUtilities.ShapeType;
+import model.shapeUtilities.drawShapeOutline.OutlineHanderProxy;
 import view.interfaces.IUiModule;
 import java.io.Serializable;
 

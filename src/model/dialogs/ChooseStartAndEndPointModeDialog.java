@@ -1,9 +1,7 @@
 package model.dialogs;
 
-// ydeng24@depaul.edu
-
-import model.MouseMode;
 import model.interfaces.IApplicationState;
+import model.mouseUtilities.MouseMode;
 import view.interfaces.IDialogChoice;
 
 public class ChooseStartAndEndPointModeDialog implements IDialogChoice<MouseMode> {

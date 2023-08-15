@@ -3,9 +3,11 @@ package view.gui;
 // ydeng24@depaul.edu
 
 import model.*;
-import pattern.command.PasteHandler;
-import pattern.factory.interfaces.IShape;
-import pattern.proxy.OutlineHandler;
+import model.command.PasteHandler;
+import model.interfaces.IShape;
+import model.shapeUtilities.ActiveShape;
+import model.shapeUtilities.ExistingShape;
+import model.shapeUtilities.drawShapeOutline.OutlineHandler;
 import view.interfaces.IPaintCanvas;
 import java.awt.*;
 
