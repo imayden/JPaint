@@ -96,7 +96,8 @@ public class Paste implements IClipboard, ICommand, IUndoable {
 
     @Override
     public void undo() {
-        Move.setUndoSelected(false);
+        // Move.setUndoSelected(false);
+        MoveHandler.setUndoSelected(false);
         for (IShape shape : shapetoPaste)
         {
             if (shape != null)
@@ -110,7 +111,8 @@ public class Paste implements IClipboard, ICommand, IUndoable {
 
     @Override
     public void redo() {
-        Move.setRedoSelected(false);
+        // Move.setRedoSelected(false);
+        MoveHandler.setRedoSelected(false);
         this.execute();
     }
 

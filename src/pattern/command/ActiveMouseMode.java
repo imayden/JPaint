@@ -38,7 +38,8 @@ public class ActiveMouseMode {
                 command = new Select(startPoint, endPoint, paintCanvas);
                 break;
             case MOVE:
-                command = new Move(startPoint, endPoint, paintCanvas);
+                // command = new Move(startPoint, endPoint, paintCanvas);
+                command = new MoveHandler(startPoint, endPoint, paintCanvas);
                 break;
             default:
                 break;

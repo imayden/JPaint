@@ -28,7 +28,8 @@ public class Select implements ICommand, IActiveShape {
     @Override
     public void execute() {
 
-        Move.setMoveSelected(false);
+        // Move.setMoveSelected(false);
+        MoveHandler.setRedoSelected(false);
 
         minimum = new Point(Math.min(startPoint.getX(), endPoint.getX()),
                 Math.min(startPoint.getY(), endPoint.getY()));
