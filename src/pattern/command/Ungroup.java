@@ -6,7 +6,7 @@ import model.ActiveShape;
 import model.ExistingShape;
 import pattern.command.interfaces.ICommand;
 // import pattern.command.interfaces.IUndoable;
-import pattern.composite.ShapeGroup;
+import pattern.composite.GroupHandler;
 import pattern.factory.interfaces.IShape;
 import pattern.singleton.MouseListener;
 import view.gui.UpdateCanvas;
@@ -18,8 +18,8 @@ public class Ungroup implements ICommand{
     public void execute() {
         System.out.println("Ungroup");
         for (IShape shape : ActiveShape.activeShape) {
-            if (shape instanceof ShapeGroup) {
-                ShapeGroup shapeGroup = (ShapeGroup) shape;
+            if (shape instanceof GroupHandler) {
+                GroupHandler shapeGroup = (GroupHandler) shape;
 
                 ExistingShape.shapeList.remove(shape);
                 for (IShape innerShape : (shapeGroup.getShapeToGroup())) {

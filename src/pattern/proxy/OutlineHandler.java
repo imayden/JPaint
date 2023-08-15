@@ -5,7 +5,7 @@ package  pattern.proxy;
 import model.ExistingShape;
 import model.ActiveShape;
 import pattern.strategy.*;
-import pattern.composite.ShapeGroup;
+import pattern.composite.GroupHandler;
 import pattern.factory.interfaces.IShape;
 import pattern.proxy.interfaces.IOutlineHandler;
 
@@ -35,7 +35,7 @@ public class OutlineHandler implements IOutlineHandler {
                         int[] yValues = triangle.getYCoords();
                         drawTriangleOutline.draw(xValues, yValues, outlineShape.getPaintCanvas());
                     }
-                    else if (outlineShape instanceof ShapeGroup) {
+                    else if (outlineShape instanceof GroupHandler) {
                         drawRectangleOutline.draw(outlineShape.getStartPointX(), outlineShape.getStartPointY(),
                                 outlineShape.getWidth(), outlineShape.getHeight(), outlineShape.getPaintCanvas());
                     }

@@ -2,17 +2,17 @@ package pattern.command;
 
 import pattern.command.interfaces.ICommand;
 import pattern.command.interfaces.IUndoable;
-import pattern.composite.ShapeGroup;
+import pattern.composite.GroupHandler;
 import pattern.singleton.MouseListener;
 
 // ydeng24@depaul.edu
 
 public class Group implements ICommand, IUndoable {     
     
-    private ShapeGroup shapeGroup;
+    private GroupHandler shapeGroup;
 
     public void execute() {
-        shapeGroup = new ShapeGroup(MouseListener.getPaintCanvas());
+        shapeGroup = new GroupHandler(MouseListener.getPaintCanvas());
         shapeGroup.group();
         CommandInvoker.add(this); 
     }

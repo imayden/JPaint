@@ -17,7 +17,7 @@ import view.gui.UpdateCanvas;
 import view.interfaces.IPaintCanvas;
 import java.awt.*;
 
-public class ShapeGroup implements IShape {
+public class GroupHandler implements IShape {
 
     private IPaintCanvas paintCanvas;
     private Graphics2D graphics2d;
@@ -33,15 +33,15 @@ public class ShapeGroup implements IShape {
     private Color secondaryColor;
     private int startPointX, startPointY;
 
-    public ShapeGroup() {
+    public GroupHandler() {
     }
 
-    public ShapeGroup(IPaintCanvas paintCanvas) {
+    public GroupHandler(IPaintCanvas paintCanvas) {
         this.paintCanvas = paintCanvas;
         this.graphics2d = paintCanvas.getGraphics2D();
     }
 
-    public ShapeGroup(ShapeGroup shapeGroup) {
+    public GroupHandler(GroupHandler shapeGroup) {
 
         for (IShape shape : shapeGroup.shapeToGroup) {
             Point startPoint = new Point(shape.getStartPointX(), shape.getStartPointY());
@@ -69,8 +69,8 @@ public class ShapeGroup implements IShape {
                             triangleShape.getShadeType(), triangleShape.getPrimaryColor(),
                             triangleShape.getSecondaryColor()));
                     break;
-                case "ShapeGroup":
-                    shapeToGroup.add((IShape) new ShapeGroup((ShapeGroup) shape));
+                case "GroupHandler":
+                    shapeToGroup.add((IShape) new GroupHandler((GroupHandler) shape));
                     break;
                 default:
                     break;

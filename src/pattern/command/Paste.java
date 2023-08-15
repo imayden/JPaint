@@ -9,7 +9,7 @@ import pattern.strategy.*;
 import model.interfaces.IClipboard;
 import pattern.command.interfaces.ICommand;
 import pattern.command.interfaces.IUndoable;
-import pattern.composite.ShapeGroup;
+import pattern.composite.GroupHandler;
 import pattern.factory.interfaces.IShape;
 import view.gui.UpdateCanvas;
 import view.interfaces.IPaintCanvas;
@@ -24,7 +24,7 @@ public class Paste implements IClipboard, ICommand, IUndoable {
     public Paste() {
         shapetoPaste = new LinkedList<>();
         
-        System.out.println("The number of the shapes on the clipboard: " + clipboard.size());
+        System.out.println("Shapes on the clipboard: " + clipboard.size());
         for (IShape shape : clipboard) {
             System.out.println(shape.getClass().getSimpleName());
         }
@@ -61,9 +61,9 @@ public class Paste implements IClipboard, ICommand, IUndoable {
                     shapeStrategy = new Triangle(startPoint, endPoint, triangleShape.getPaintCanvas(), triangleShape.getShadeType(),
                             triangleShape.getPrimaryColor(), triangleShape.getSecondaryColor());
                     break;
-                case "ShapeGroup":
-                    ShapeGroup shapeGroup = (ShapeGroup) shape;
-                    shapeStrategy = new ShapeGroup(shapeGroup);
+                case "GroupHandler":
+                    GroupHandler shapeGroup = (GroupHandler) shape;
+                    shapeStrategy = new GroupHandler(shapeGroup);
                     shapeStrategy.updateCoordinates(20, 20);
                     break;
                 default:
@@ -122,51 +122,3 @@ public class Paste implements IClipboard, ICommand, IUndoable {
         return isPasteSelected;
     }
 }
-
-// package pattern.command;
-
-// // ydeng24@depaul.edu
-
-// import model.ExistingShape;
-// import model.Point;
-// import model.ActiveShape;
-// import pattern.strategy.*;
-// import model.interfaces.IClipboard;
-// import pattern.command.interfaces.ICommand;
-// import pattern.command.interfaces.IUndoable;
-// import pattern.composite.ShapeGroup;
-// import pattern.factory.interfaces.IShape;
-// import view.gui.UpdateCanvas;
-// import view.interfaces.IPaintCanvas;
-
-// import java.awt.Component;
-// import java.util.LinkedList;
-
-// public class Paste implements IClipboard, IUndoable, ICommand {
-
-//     private PasteHandler handler;
-
-//     public Paste() {     
-//         System.out.println("The number of the shapes on the clipboard: " + clipboard.size());
-//         handler = new PasteHandler();
-
-//     }
-
-//     public void execute() {
-//         handler.execute();
-//         CommandInvoker.add(this);
-//     }
-
-//     @Override
-//     public void undo() {
-//         handler.undo();
-//     }
-
-//     @Override
-//     public void redo() {
-//         handler.redo();
-//     }
-
-
-// }
-
