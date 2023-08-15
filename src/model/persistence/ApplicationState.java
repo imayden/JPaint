@@ -142,7 +142,8 @@ public class ApplicationState implements IApplicationState, Serializable {
 
     @Override
     public void paste() {
-        pasteOperation =  new Paste();
+        // pasteOperation =  new Paste();
+        pasteOperation =  new PasteHandler();
         pasteOperation.execute();
         System.out.println("Action: Paste");
     }

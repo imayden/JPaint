@@ -2,22 +2,13 @@ package pattern.command;
 
 // ydeng24@depaul.edu
 
-import model.ExistingShape;
-import model.Point;
-import model.interfaces.IActiveShape;
-import pattern.command.interfaces.ICommand;
-import pattern.factory.interfaces.IShape;
-import view.gui.UpdateCanvas;
 import view.interfaces.IPaintCanvas;
+import model.Point;
 
-public class Select implements ICommand, IActiveShape {
+public class Select {
     private IPaintCanvas paintCanvas;
     private Point startPoint;
     private Point endPoint;
-    private Point minimum;
-    private int width;
-    private int height;
-    private static boolean isSelected = false;
 
     public Select(Point startPoint, Point endPoint, IPaintCanvas paintCanvas) {
         this.startPoint = startPoint;
@@ -25,50 +16,12 @@ public class Select implements ICommand, IActiveShape {
         this.paintCanvas = paintCanvas;
     }
 
-    @Override
     public void execute() {
-
-        // Move.setMoveSelected(false);
-        MoveHandler.setRedoSelected(false);
-
-        minimum = new Point(Math.min(startPoint.getX(), endPoint.getX()),
-                Math.min(startPoint.getY(), endPoint.getY()));
-
-        width = java.lang.Math.abs(startPoint.getX() - endPoint.getX());
-
-        height = java.lang.Math.abs(startPoint.getY() - endPoint.getY());
-
-        activeShape.clear();
-        isSelected = false;
-
-        UpdateCanvas.update(paintCanvas);
-        activeShape.clear();
-
-        System.out.println("minimum: " + minimum);
-        System.out.println("minimum: " +  minimum);
-
-        for (IShape shape : ExistingShape.shapeList)
-        {
-                if (shape.getStartPointX() < minimum.getX() + width &&
-                    shape.getStartPointX() + shape.getWidth() > minimum.getX() &&
-                    shape.getStartPointY() < minimum.getY() + height &&
-                    shape.getStartPointY() + shape.getHeight() > minimum.getY())
-            {
-                     activeShape.add(shape);
-
-            }
-        }
-        System.out.println("The number of the existing shapes on the canvas: " + ExistingShape.shapeList.size());
-        System.out.println("The number of the active(selected) shapes: " + activeShape.size());
-
-        isSelected = (activeShape.size() > 0) ? true : false;
-
+        SelectHandler handler = new SelectHandler(startPoint, endPoint, paintCanvas);
+        handler.execute();
     }
 
-    public static boolean isSelected() {
-        return isSelected;
-    }
-
+    // Getters
     public IPaintCanvas getPaintCanvas() {
         return paintCanvas;
     }
@@ -81,3 +34,5 @@ public class Select implements ICommand, IActiveShape {
         return endPoint;
     }
 }
+
+

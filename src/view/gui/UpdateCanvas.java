@@ -3,7 +3,7 @@ package view.gui;
 // ydeng24@depaul.edu
 
 import model.*;
-import pattern.command.Paste;
+import pattern.command.PasteHandler;
 import pattern.factory.interfaces.IShape;
 import pattern.proxy.OutlineHandler;
 import view.interfaces.IPaintCanvas;
@@ -22,9 +22,11 @@ public abstract class UpdateCanvas {
         for (IShape shape : ExistingShape.shapeList) {
             shape.drawShape();
 
-            if (Paste.isIsPasteSelected() && ActiveShape.activeShape.contains(shape)) {
+            // if (Paste.isIsPasteSelected() && ActiveShape.activeShape.contains(shape)) {
+            if (PasteHandler.isIsPasteSelected() && ActiveShape.activeShape.contains(shape)) {
                 selectedShapeOutline.outline();
-                Paste.setIsPasteSelected(false);
+                // Paste.setIsPasteSelected(false);
+                PasteHandler.setIsPasteSelected(false);
             }
         }
     }

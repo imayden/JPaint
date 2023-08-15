@@ -35,7 +35,8 @@ public class ActiveMouseMode {
                 command = new Draw(startPoint, endPoint, paintCanvas, appState);
                 break;
             case SELECT:
-                command = new Select(startPoint, endPoint, paintCanvas);
+                // command = new Select(startPoint, endPoint, paintCanvas);
+                command = new SelectHandler(startPoint, endPoint, paintCanvas);
                 break;
             case MOVE:
                 // command = new Move(startPoint, endPoint, paintCanvas);

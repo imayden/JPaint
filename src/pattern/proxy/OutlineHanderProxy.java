@@ -1,9 +1,8 @@
 package pattern.proxy;
 
 import model.persistence.ApplicationState;
-import pattern.command.Move;
 import pattern.command.MoveHandler;
-import pattern.command.Select;
+import pattern.command.SelectHandler;
 import pattern.command.interfaces.ICommand;
 import pattern.proxy.interfaces.IOutlineHandler;
 
@@ -18,8 +17,10 @@ public class OutlineHanderProxy implements IOutlineHandler {
     @Override
     public void outline() {
         switch(cmd.getClass().getSimpleName()) {
-            case "Select":
-                drawOutlineIf(Select.isSelected());
+            // case "Select":
+            case "SelectHandler":
+                // drawOutlineIf(Select.isSelected());
+                drawOutlineIf(SelectHandler.isSelected());
                 break;
             // case "Move":
             case "MoveHandler":
