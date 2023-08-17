@@ -1,5 +1,9 @@
 package model.command;
 
+// SE450 Final Project
+// ydeng24@depaul.edu
+// © 2023 Ayden Deng
+
 import java.util.Stack;
 
 import model.interfaces.IUndoable;

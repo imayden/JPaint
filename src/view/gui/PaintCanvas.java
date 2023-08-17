@@ -2,9 +2,9 @@ package view.gui;
 
 // ydeng24@depaul.edu
 
-import view.interfaces.IPaintCanvas;
+import view.interfaces.APaintCanvas;
 import java.awt.*;
-public class PaintCanvas extends IPaintCanvas {
+public class PaintCanvas extends APaintCanvas {
 
     public Graphics2D getGraphics2D() {
         return (Graphics2D)getGraphics();

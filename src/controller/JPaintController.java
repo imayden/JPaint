@@ -1,9 +1,10 @@
 package controller;
 
-import controller.interfaces.IJPaintController;
-
+// SE450 Final Project
 // ydeng24@depaul.edu
+// © 2023 Ayden Deng
 
+import controller.interfaces.IJPaintController;
 import model.interfaces.IApplicationState;
 import view.EventName;
 import view.interfaces.IUiModule;

@@ -8,14 +8,14 @@ package model.shapeUtilities.drawShapeOutline;
 import java.awt.*;
 
 import model.mouseUtilities.Point;
-import view.interfaces.IPaintCanvas;
+import view.interfaces.APaintCanvas;
 
 public class RectangleOutline {
     private static final int OUTLINE_THICKNESS = 3;
     private static final int OUTLINE_OFFSET = 5;
     private static final float[] DASH_PATTERN = {9};
 
-    public void draw(int startPointX, int startPointY, int width, int height, IPaintCanvas paintCanvas) {
+    public void draw(int startPointX, int startPointY, int width, int height, APaintCanvas paintCanvas) {
         Point[] points = calculatePoints(startPointX, startPointY, width, height);
         drawOutline(points, paintCanvas);
     }
@@ -26,7 +26,7 @@ public class RectangleOutline {
         return new Point[] {startPoint, endPoint};
     }
 
-    private void drawOutline(Point[] points, IPaintCanvas paintCanvas) {
+    private void drawOutline(Point[] points, APaintCanvas paintCanvas) {
         Graphics2D graphics2d = paintCanvas.getGraphics2D();
         Stroke stroke = new BasicStroke(OUTLINE_THICKNESS, BasicStroke.CAP_BUTT,
                 BasicStroke.JOIN_BEVEL, 1, DASH_PATTERN, 0);

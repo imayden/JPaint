@@ -5,14 +5,14 @@ import model.mouseUtilities.Point;
 import model.shapeUtilities.ActiveShape;
 import model.shapeUtilities.ExistingShape;
 import view.gui.UpdateCanvas;
-import view.interfaces.IPaintCanvas;
+import view.interfaces.APaintCanvas;
 
 import java.awt.*;
 import java.util.LinkedList;
 
 // Draw ellipse
 public class Ellipse implements IShape {
-    private IPaintCanvas paintCanvas;
+    private APaintCanvas paintCanvas;
     private Point startPoint;
     private Point endPoint;
     private Point minimum;
@@ -25,7 +25,7 @@ public class Ellipse implements IShape {
     private int startPointX, startPointY;
     
 
-    public Ellipse(Point startPoint, Point endPoint, IPaintCanvas paintCanvas,
+    public Ellipse(Point startPoint, Point endPoint, APaintCanvas paintCanvas,
                             String shadeType, Color primaryColor, Color secondaryColor) {
         this.startPoint = startPoint;
         this.endPoint = endPoint;
@@ -117,7 +117,7 @@ public class Ellipse implements IShape {
     }
 
     @Override
-    public IPaintCanvas getPaintCanvas() {
+    public APaintCanvas getPaintCanvas() {
         return this.paintCanvas;
     }
 

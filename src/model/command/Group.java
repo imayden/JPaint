@@ -1,10 +1,14 @@
 package model.command;
 
+import model.command.CommandHandler.GroupHandler;
+
+// SE450 Final Project
+// ydeng24@depaul.edu
+// © 2023 Ayden Deng
+
 import model.interfaces.ICommand;
 import model.interfaces.IUndoable;
 import model.mouseUtilities.MouseListener;
-
-// ydeng24@depaul.edu
 
 public class Group implements ICommand, IUndoable {     
     

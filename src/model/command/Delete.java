@@ -1,9 +1,15 @@
 package model.command;
 
+import model.command.CommandHandler.DeletionHandler;
+
+// SE450 Final Project
+// ydeng24@depaul.edu
+// © 2023 Ayden Deng
+
+import model.interfaces.ICommand;
 import model.interfaces.IUndoable;
 
-// Command class that uses DeletionHandler to execute the delete operation
-public class Delete implements IUndoable {
+public class Delete implements IUndoable, ICommand{
 
     private DeletionHandler handler;
     

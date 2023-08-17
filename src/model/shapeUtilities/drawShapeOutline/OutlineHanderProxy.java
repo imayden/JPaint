@@ -1,9 +1,7 @@
 package model.shapeUtilities.drawShapeOutline;
 
-// Proxy Pattern
-
-import model.command.MoveHandler;
-import model.command.SelectHandler;
+import model.command.CommandHandler.MoveHandler;
+import model.command.CommandHandler.SelectHandler;
 import model.interfaces.ICommand;
 import model.interfaces.IOutlineHandler;
 import model.persistence.ApplicationState;

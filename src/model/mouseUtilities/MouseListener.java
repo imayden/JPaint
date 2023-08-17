@@ -5,8 +5,7 @@ package model.mouseUtilities;
 // ydeng24@depaul.edu
 
 import model.persistence.ApplicationState;
-import view.interfaces.IPaintCanvas;
-import model.command.ActiveMouseMode;
+import view.interfaces.APaintCanvas;
 
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
@@ -15,11 +14,11 @@ public class MouseListener extends MouseAdapter {
 
     private Point startPoint;
     private Point endPoint;
-    private static IPaintCanvas paintCanvas;
+    private static APaintCanvas paintCanvas;
     private static ApplicationState appState;
     private static MouseListener myMouseListenerObj;
 
-    public static IPaintCanvas getPaintCanvas() {
+    public static APaintCanvas getPaintCanvas() {
         return MouseListener.paintCanvas;
     };
 
@@ -32,7 +31,7 @@ public class MouseListener extends MouseAdapter {
         return myMouseListenerObj;
     }
 
-    public void setSettings(IPaintCanvas paintCanvas, ApplicationState appState) {
+    public void setSettings(APaintCanvas paintCanvas, ApplicationState appState) {
         this.paintCanvas = paintCanvas;
         this.appState = appState;
     }

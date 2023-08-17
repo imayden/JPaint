@@ -1,6 +1,6 @@
 package model.interfaces;
 
-import view.interfaces.IPaintCanvas;
+import view.interfaces.APaintCanvas;
 import java.awt.*;
 import java.util.LinkedList;
 
@@ -15,7 +15,7 @@ public interface IShape extends IUndoable, IActiveShape
     public int getStartPointY();
     public int getWidth();
     public int getHeight();
-    public IPaintCanvas getPaintCanvas();
+    public APaintCanvas getPaintCanvas();
     public Point getStartPoint();
     public Point getEndPoint();
     public IShape getShapeDrawingStrategy();

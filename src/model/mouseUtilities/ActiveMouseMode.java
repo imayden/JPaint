@@ -1,16 +1,17 @@
-package model.command;
+package model.mouseUtilities;
 
+import model.command.Draw;
+import model.command.CommandHandler.MoveHandler;
+import model.command.CommandHandler.SelectHandler;
 import model.interfaces.IApplicationState;
 import model.interfaces.ICommand;
 import model.interfaces.IOutlineHandler;
-import model.mouseUtilities.MouseMode;
-import model.mouseUtilities.Point;
 import model.shapeUtilities.drawShapeOutline.OutlineHanderProxy;
-import view.interfaces.IPaintCanvas;
+import view.interfaces.APaintCanvas;
 
 public class ActiveMouseMode {
 
-    public static void clickedMode(Point startPoint, Point endPoint, IPaintCanvas paintCanvas, IApplicationState appState) {
+    public static void clickedMode(Point startPoint, Point endPoint, APaintCanvas paintCanvas, IApplicationState appState) {
 
         ICommand command = getCommand(appState.getActiveMouseMode(), startPoint, endPoint, paintCanvas, appState);
         if (command == null) {
@@ -26,7 +27,7 @@ public class ActiveMouseMode {
         }
     }
 
-    private static ICommand getCommand(MouseMode mode, Point startPoint, Point endPoint, IPaintCanvas paintCanvas, IApplicationState appState) {
+    private static ICommand getCommand(MouseMode mode, Point startPoint, Point endPoint, APaintCanvas paintCanvas, IApplicationState appState) {
         ICommand command = null;
         switch (mode) {
             case DRAW:

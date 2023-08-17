@@ -1,22 +1,28 @@
 
 package model.command;
 
+import model.command.CommandHandler.MoveHandler;
+
+// SE450 Final Project
+// ydeng24@depaul.edu
+// © 2023 Ayden Deng
+
 import model.interfaces.IShape;
 import model.interfaces.IUndoable;
 import model.mouseUtilities.Point;
 import view.gui.UpdateCanvas;
-import view.interfaces.IPaintCanvas;
+import view.interfaces.APaintCanvas;
 import java.util.LinkedList;
 
 public class Move implements IUndoable {
     private MoveHandler handler;
-    private IPaintCanvas paintCanvas;
+    private APaintCanvas paintCanvas;
     private Point startPoint;
     private Point endPoint;
     private LinkedList<IShape> shapesToMove;
     private LinkedList<IShape> shapesToRemove;
 
-    public Move(Point startPoint, Point endPoint, IPaintCanvas paintCanvas) {
+    public Move(Point startPoint, Point endPoint, APaintCanvas paintCanvas) {
         this.startPoint = startPoint;
         this.endPoint = endPoint;
         this.paintCanvas = paintCanvas;

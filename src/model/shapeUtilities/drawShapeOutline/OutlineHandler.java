@@ -1,6 +1,6 @@
 package  model.shapeUtilities.drawShapeOutline;
 
-import model.command.GroupHandler;
+import model.command.CommandHandler.GroupHandler;
 import model.interfaces.IOutlineHandler;
 import model.interfaces.IShape;
 import model.shapeUtilities.ActiveShape;

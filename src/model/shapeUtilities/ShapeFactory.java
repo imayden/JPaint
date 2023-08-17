@@ -5,12 +5,12 @@ import model.interfaces.IShape;
 import model.mouseUtilities.Point;
 import model.nullObject.NullShape;
 import model.shapeUtilities.drawShape.*;
-import view.interfaces.IPaintCanvas;
+import view.interfaces.APaintCanvas;
 
 import java.awt.Color;
 
 public class ShapeFactory {
-    public static IShape createShape(IApplicationState appState, Point startPoint, Point endPoint, IPaintCanvas paintCanvas, String shadeType, Color primaryColor, Color secondaryColor) {
+    public static IShape createShape(IApplicationState appState, Point startPoint, Point endPoint, APaintCanvas paintCanvas, String shadeType, Color primaryColor, Color secondaryColor) {
         switch (appState.getActiveShapeType()) {
             case RECTANGLE:
                 return new Rectangle(startPoint, endPoint, paintCanvas, shadeType, primaryColor, secondaryColor);

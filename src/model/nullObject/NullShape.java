@@ -3,7 +3,7 @@ package model.nullObject;
 import model.interfaces.IShape;
 import model.mouseUtilities.Point;
 import view.gui.PaintCanvas;
-import view.interfaces.IPaintCanvas;
+import view.interfaces.APaintCanvas;
 import java.awt.*;
 import java.util.LinkedList;
 
@@ -25,7 +25,7 @@ public class NullShape implements IShape {
     }
 
     @Override
-    public IPaintCanvas getPaintCanvas() {
+    public APaintCanvas getPaintCanvas() {
         return new PaintCanvas();
     }
 

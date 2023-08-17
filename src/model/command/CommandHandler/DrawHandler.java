@@ -1,26 +1,30 @@
-package model.command;
+package model.command.CommandHandler;
 
-import model.*;
+// SE450 Final Project
+// ydeng24@depaul.edu
+// © 2023 Ayden Deng
+
 import model.interfaces.*;
 import model.mouseUtilities.Point;
 import model.shadeUtilities.ShadeUtils;
 import model.shapeUtilities.ExistingShape;
 import model.shapeUtilities.ShapeFactory;
 import model.shapeUtilities.drawShape.ShapeDrawing;
-import view.interfaces.IPaintCanvas;
+import view.interfaces.APaintCanvas;
 import model.colorUtilities.ColorUtils;
+import model.command.CommandInvoker;
 
 import java.awt.*;
 
 public class DrawHandler {
     private Point startPoint;
     private Point endPoint;
-    private IPaintCanvas paintCanvas;
+    private APaintCanvas paintCanvas;
     private IApplicationState appState;
     private ShapeDrawing drawShapeContext;
 
     // Constructor Injection Pattern
-    public DrawHandler(Point startPoint, Point endPoint, IPaintCanvas paintCanvas, IApplicationState appState) {
+    public DrawHandler(Point startPoint, Point endPoint, APaintCanvas paintCanvas, IApplicationState appState) {
         this.startPoint = startPoint;
         this.endPoint = endPoint;
         this.paintCanvas = paintCanvas;

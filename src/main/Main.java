@@ -1,6 +1,8 @@
 package main;
 
+// SE450 Final Project
 // ydeng24@depaul.edu
+// © 2023 Ayden Deng
 
 import controller.JPaintController;
 import controller.interfaces.IJPaintController;
@@ -11,12 +13,12 @@ import view.gui.Gui;
 import view.gui.GuiWindow;
 import view.gui.PaintCanvas;
 import view.interfaces.IGuiWindow;
-import view.interfaces.IPaintCanvas;
+import view.interfaces.APaintCanvas;
 import view.interfaces.IUiModule;
 
 public class Main {
     public static void main(String[] args) {
-        IPaintCanvas paintCanvas = new PaintCanvas();
+        APaintCanvas paintCanvas = new PaintCanvas();
         IGuiWindow guiWindow = new GuiWindow(paintCanvas);
         IUiModule uiModule = new Gui(guiWindow);
         ApplicationState appState = new ApplicationState(uiModule);
@@ -31,4 +33,3 @@ public class Main {
         mouseListener.setSettings(paintCanvas, appState);
     }
 }
-

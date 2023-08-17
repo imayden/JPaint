@@ -1,17 +1,22 @@
-package model.command;
+package model.command.CommandHandler;
+
+import model.command.CommandInvoker;
+
+// SE450 Final Project
+// ydeng24@depaul.edu
+// © 2023 Ayden Deng
 
 import model.interfaces.*;
 import model.shapeUtilities.ExistingShape;
 import model.shapeUtilities.drawShapeOutline.OutlineHandler;
 import view.gui.UpdateCanvas;
-import view.interfaces.IPaintCanvas;
+import view.interfaces.APaintCanvas;
 import java.util.LinkedList;
 
-// Handler class that manages the specific delete actions
 public class DeletionHandler implements IClipboard, IActiveShape, IUndoable  {
 
     private LinkedList<IShape> shapesToDelete;
-    private IPaintCanvas paintCanvas = null;
+    private APaintCanvas paintCanvas = null;
     private OutlineHandler activeShapeOutline;
 
     public DeletionHandler() {

@@ -1,4 +1,10 @@
-package model.command;
+package model.command.CommandHandler;
+
+import model.command.CommandInvoker;
+
+// SE450 Final Project
+// ydeng24@depaul.edu
+// © 2023 Ayden Deng
 
 import model.interfaces.IActiveShape;
 import model.interfaces.ICommand;
@@ -7,12 +13,12 @@ import model.interfaces.IUndoable;
 import model.mouseUtilities.Point;
 import model.shapeUtilities.ExistingShape;
 import view.gui.UpdateCanvas;
-import view.interfaces.IPaintCanvas;
+import view.interfaces.APaintCanvas;
 import java.util.LinkedList;
 
 public class MoveHandler implements ICommand, IUndoable, IActiveShape {
 
-    private final IPaintCanvas paintCanvas;
+    private final APaintCanvas paintCanvas;
     private int xDelta;
     private int yDelta;
     private Point startPoint;
@@ -23,7 +29,7 @@ public class MoveHandler implements ICommand, IUndoable, IActiveShape {
     private LinkedList<IShape> shapesToMove;
     private LinkedList<IShape> shapesToRemove;
 
-    public MoveHandler(Point startPoint, Point endPoint, IPaintCanvas paintCanvas) {
+    public MoveHandler(Point startPoint, Point endPoint, APaintCanvas paintCanvas) {
         this.paintCanvas = paintCanvas;
         this.startPoint = startPoint;
         this.endPoint = endPoint;
@@ -141,7 +147,7 @@ public class MoveHandler implements ICommand, IUndoable, IActiveShape {
         return endPoint;
     }
 
-    public IPaintCanvas getPaintCanvas() {
+    public APaintCanvas getPaintCanvas() {
         return paintCanvas;
     }
 

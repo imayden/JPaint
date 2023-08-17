@@ -1,34 +1,35 @@
 package model.command;
 
-import model.interfaces.ICommand;
-import model.interfaces.IShape;
-import model.mouseUtilities.MouseListener;
-import model.shapeUtilities.ActiveShape;
-import model.shapeUtilities.ExistingShape;
-import view.gui.UpdateCanvas;
+import model.command.CommandHandler.UngroupHandler;
 
+// SE450 Final Project
 // ydeng24@depaul.edu
+// © 2023 Ayden Deng
 
-public class Ungroup implements ICommand{
+import model.interfaces.ICommand;
+import model.interfaces.IUndoable;
 
-    public void execute() {
-        System.out.println("Ungroup");
-        for (IShape shape : ActiveShape.activeShape) {
-            if (shape instanceof GroupHandler) {
-                GroupHandler shapeGroup = (GroupHandler) shape;
+public class Ungroup implements ICommand, IUndoable {
 
-                ExistingShape.shapeList.remove(shape);
-                for (IShape innerShape : (shapeGroup.getShapeToGroup())) {
-                    if (!ExistingShape.shapeList.contains(innerShape)) {
-                        ExistingShape.shapeList.add(innerShape);
-                    }
+    private final UngroupHandler ungroupHandler;
 
-                }
-            }
-        }
-        ActiveShape.activeShape.clear();
-        UpdateCanvas.update(MouseListener.getPaintCanvas());
-
+    public Ungroup() {
+        this.ungroupHandler = new UngroupHandler();
     }
-    
+
+    @Override
+    public void execute() {
+        ungroupHandler.execute();
+        CommandInvoker.add(this); 
+    }
+
+    @Override
+    public void undo() {
+        ungroupHandler.undo();
+    }
+
+    @Override
+    public void redo() {
+        ungroupHandler.redo();
+    }
 }

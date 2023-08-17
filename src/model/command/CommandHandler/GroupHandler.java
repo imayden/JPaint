@@ -1,4 +1,10 @@
-package model.command;
+package model.command.CommandHandler;
+
+import model.command.CommandInvoker;
+
+// SE450 Final Project
+// ydeng24@depaul.edu
+// © 2023 Ayden Deng
 
 import model.interfaces.IShape;
 import model.mouseUtilities.MouseListener;
@@ -8,18 +14,16 @@ import model.shapeUtilities.drawShape.Ellipse;
 import model.shapeUtilities.drawShape.Rectangle;
 import model.shapeUtilities.drawShape.Triangle;
 import model.shapeUtilities.drawShapeOutline.RectangleOutline;
-
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
-
 import view.gui.UpdateCanvas;
-import view.interfaces.IPaintCanvas;
+import view.interfaces.APaintCanvas;
 import java.awt.*;
 
 public class GroupHandler implements IShape {
 
-    private IPaintCanvas paintCanvas;
+    private APaintCanvas paintCanvas;
     private Graphics2D graphics2d;
 
     private List<IShape> shapeToGroup = new ArrayList<>();
@@ -36,7 +40,7 @@ public class GroupHandler implements IShape {
     public GroupHandler() {
     }
 
-    public GroupHandler(IPaintCanvas paintCanvas) {
+    public GroupHandler(APaintCanvas paintCanvas) {
         this.paintCanvas = paintCanvas;
         this.graphics2d = paintCanvas.getGraphics2D();
     }
@@ -190,7 +194,7 @@ public class GroupHandler implements IShape {
     }
 
     @Override
-    public IPaintCanvas getPaintCanvas() {
+    public APaintCanvas getPaintCanvas() {
         return this.paintCanvas;
     }
 

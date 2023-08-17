@@ -1,4 +1,8 @@
-package model.command;
+package model.command.CommandHandler;
+
+// SE450 Final Project
+// ydeng24@depaul.edu
+// © 2023 Ayden Deng
 
 import model.interfaces.IActiveShape;
 import model.interfaces.ICommand;
@@ -6,10 +10,10 @@ import model.interfaces.IShape;
 import model.mouseUtilities.Point;
 import model.shapeUtilities.ExistingShape;
 import view.gui.UpdateCanvas;
-import view.interfaces.IPaintCanvas;
+import view.interfaces.APaintCanvas;
 
 public class SelectHandler implements ICommand, IActiveShape {
-    private IPaintCanvas paintCanvas;
+    private APaintCanvas paintCanvas;
     private Point startPoint;
     private Point endPoint;
     private Point minimum;
@@ -17,7 +21,7 @@ public class SelectHandler implements ICommand, IActiveShape {
     private int height;
     private static boolean isSelected = false;
 
-    public SelectHandler(Point startPoint, Point endPoint, IPaintCanvas paintCanvas) {
+    public SelectHandler(Point startPoint, Point endPoint, APaintCanvas paintCanvas) {
         this.startPoint = startPoint;
         this.endPoint = endPoint;
         this.paintCanvas = paintCanvas;
@@ -65,7 +69,7 @@ public class SelectHandler implements ICommand, IActiveShape {
         return isSelected;
     }
 
-    public IPaintCanvas getPaintCanvas() {
+    public APaintCanvas getPaintCanvas() {
         return paintCanvas;
     }
 

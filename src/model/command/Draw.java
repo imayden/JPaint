@@ -1,20 +1,25 @@
 package model.command;
 
+import model.command.CommandHandler.DrawHandler;
+
+// SE450 Final Project
+// ydeng24@depaul.edu
+// © 2023 Ayden Deng
+
 import model.interfaces.IApplicationState;
 import model.interfaces.ICommand;
 import model.mouseUtilities.Point;
-import view.interfaces.IPaintCanvas;
+import view.interfaces.APaintCanvas;
 
 
 public class Draw implements ICommand {
     private Point startPoint;
     private Point endPoint;
-    private IPaintCanvas paintCanvas;
+    private APaintCanvas paintCanvas;
     private IApplicationState appState;
     private DrawHandler drawHandler;
 
-    // Constructor Injection Pattern
-    public Draw(Point startPoint, Point endPoint, IPaintCanvas paintCanvas, IApplicationState appState) {
+    public Draw(Point startPoint, Point endPoint, APaintCanvas paintCanvas, IApplicationState appState) {
         this.startPoint = startPoint;
         this.endPoint = endPoint;
         this.paintCanvas = paintCanvas;

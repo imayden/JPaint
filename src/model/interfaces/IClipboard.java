@@ -5,5 +5,5 @@ package model.interfaces;
 import java.util.LinkedList;
 
 public interface IClipboard {
-    public LinkedList<IShape> clipboard = new LinkedList<>();
+    public static LinkedList<IShape> clipboard = new LinkedList<>();
 }

@@ -1,4 +1,10 @@
-package model.command;
+package model.command.CommandHandler;
+
+import model.command.CommandInvoker;
+
+// SE450 Final Project
+// ydeng24@depaul.edu
+// © 2023 Ayden Deng
 
 import model.interfaces.IClipboard;
 import model.interfaces.ICommand;
@@ -9,13 +15,13 @@ import model.shapeUtilities.ActiveShape;
 import model.shapeUtilities.ExistingShape;
 import model.shapeUtilities.drawShape.*;
 import view.gui.UpdateCanvas;
-import view.interfaces.IPaintCanvas;
+import view.interfaces.APaintCanvas;
 import java.util.LinkedList;
 
 public class PasteHandler implements IClipboard, ICommand, IUndoable {
 
     private LinkedList<IShape> shapetoPaste;
-    private IPaintCanvas paintCanvas = null;
+    private APaintCanvas paintCanvas = null;
     private static boolean isPasteSelected = false;
 
     public PasteHandler() {
@@ -117,11 +123,11 @@ public class PasteHandler implements IClipboard, ICommand, IUndoable {
         PasteHandler.isPasteSelected = isPasteSelected;
     }
 
-    public static boolean isIsPasteSelected() {
+    public static boolean getIsPasteSelected() {
         return isPasteSelected;
     }
 
-    public IPaintCanvas getPaintCanvas() {
+    public APaintCanvas getPaintCanvas() {
         return paintCanvas;
     }
 }

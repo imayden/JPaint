@@ -5,5 +5,5 @@ package model.interfaces;
 import java.util.LinkedList;
 
 public interface IActiveShape {
-    LinkedList<IShape> activeShape = new LinkedList<>();
+    public static LinkedList<IShape> activeShape = new LinkedList<>();
 }

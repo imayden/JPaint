@@ -5,13 +5,13 @@ import model.mouseUtilities.Point;
 import model.shapeUtilities.ActiveShape;
 import model.shapeUtilities.ExistingShape;
 import view.gui.UpdateCanvas;
-import view.interfaces.IPaintCanvas;
+import view.interfaces.APaintCanvas;
 import java.awt.*;
 import java.util.LinkedList;
 
 public class Triangle implements IShape {
 
-    private IPaintCanvas paintCanvas;
+    private APaintCanvas paintCanvas;
     private Point startPoint;
     private Point endPoint;
     private int[] xCoords = new int[3];
@@ -20,7 +20,7 @@ public class Triangle implements IShape {
     private Color primaryColor;
     private Color secondaryColor;
 
-    public Triangle(Point startPoint, Point endPoint, IPaintCanvas paintCanvas, String shadeType, Color primaryColor, Color secondaryColor) {
+    public Triangle(Point startPoint, Point endPoint, APaintCanvas paintCanvas, String shadeType, Color primaryColor, Color secondaryColor) {
         this.startPoint = startPoint;
         this.endPoint = endPoint;
         this.paintCanvas = paintCanvas;
@@ -88,7 +88,7 @@ public class Triangle implements IShape {
     }
 
     @Override
-    public IPaintCanvas getPaintCanvas() {
+    public APaintCanvas getPaintCanvas() {
         return this.paintCanvas;
     }
 

@@ -1,17 +1,21 @@
 package model.command;
 
-import model.mouseUtilities.Point;
+import model.command.CommandHandler.SelectHandler;
 
+// SE450 Final Project
 // ydeng24@depaul.edu
+// © 2023 Ayden Deng
 
-import view.interfaces.IPaintCanvas;
+import model.interfaces.ICommand;
+import model.mouseUtilities.Point;
+import view.interfaces.APaintCanvas;
 
-public class Select {
-    private IPaintCanvas paintCanvas;
+public class Select implements ICommand {
+    private APaintCanvas paintCanvas;
     private Point startPoint;
     private Point endPoint;
 
-    public Select(Point startPoint, Point endPoint, IPaintCanvas paintCanvas) {
+    public Select(Point startPoint, Point endPoint, APaintCanvas paintCanvas) {
         this.startPoint = startPoint;
         this.endPoint = endPoint;
         this.paintCanvas = paintCanvas;
@@ -23,7 +27,7 @@ public class Select {
     }
 
     // Getters
-    public IPaintCanvas getPaintCanvas() {
+    public APaintCanvas getPaintCanvas() {
         return paintCanvas;
     }
 

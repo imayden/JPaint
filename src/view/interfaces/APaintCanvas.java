@@ -5,6 +5,6 @@ package view.interfaces;
 import javax.swing.*;
 import java.awt.*;
 
-public abstract class IPaintCanvas extends JComponent {
+public abstract class APaintCanvas extends JComponent {
     public abstract Graphics2D getGraphics2D();
 }

@@ -5,7 +5,7 @@ package model.shapeUtilities.drawShapeOutline;
 // ydeng24@depaul.edu
 // Final Project
 
-import view.interfaces.IPaintCanvas;
+import view.interfaces.APaintCanvas;
 
 import java.awt.*;
 
@@ -17,7 +17,7 @@ public class TriangleOutline {
     private static final int OFFSET_DIAGONAL = 10;
     private static final int COORDINATES_COUNT = 3;
 
-    public void draw(int[] xCoords, int[] yCoords, IPaintCanvas paintCanvas) {
+    public void draw(int[] xCoords, int[] yCoords, APaintCanvas paintCanvas) {
 
         Graphics2D graphics2d = paintCanvas.getGraphics2D();
         Stroke stroke = new BasicStroke(OUTLINE_THICKNESS, BasicStroke.CAP_BUTT, BasicStroke.JOIN_BEVEL, 1, DASH_PATTERN, 0);

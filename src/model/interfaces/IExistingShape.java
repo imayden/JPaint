@@ -5,5 +5,5 @@ package model.interfaces;
 import java.util.LinkedList;
 
 public interface IExistingShape {
-    public LinkedList<IShape> shapeList = new LinkedList<>();
+    public static  LinkedList<IShape> shapeList = new LinkedList<>();
 }
