@@ -1,7 +1,10 @@
 package model.colorUtilities;
 
-// Singleton Pattern
-// Flyweight Pattern
+// Design Pattern Used: Singleton, Flyweight 
+
+// SE450 Final Project
+// ydeng24@depaul.edu
+// © 2023 Ayden Deng
 
 
 import java.awt.Color;

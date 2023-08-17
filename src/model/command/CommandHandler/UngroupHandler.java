@@ -1,5 +1,7 @@
 package model.command.CommandHandler;
 
+// Design Pattern Used: Composite, Command, State, Memento, Observer 
+
 // SE450 Final Project
 // ydeng24@depaul.edu
 // © 2023 Ayden Deng

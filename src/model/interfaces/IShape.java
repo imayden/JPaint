@@ -1,10 +1,10 @@
 package model.interfaces;
 
-import view.interfaces.APaintCanvas;
 import java.awt.*;
 import java.util.LinkedList;
 
 import model.mouseUtilities.Point;
+import view.gui.APaintCanvas;
 
 // ydeng24@depaul.edu
 

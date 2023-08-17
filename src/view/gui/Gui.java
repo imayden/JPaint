@@ -1,6 +1,9 @@
 package view.gui;
 
+// SE450 Final Project
 // ydeng24@depaul.edu
+// © 2023 Ayden Deng
+
 
 import javax.swing.*;
 import view.EventName;
@@ -19,20 +22,13 @@ public class Gui implements IUiModule {
     
 	@Override
 	public void addEvent(EventName eventName, IEventCallback callback) {
-		JButton button = gui.getButton(eventName);
-		button.addActionListener((ActionEvent) -> callback.run());
+		gui.getButton(eventName).addActionListener(ActionEvent -> callback.run());
 	}
 
+    @SuppressWarnings("unchecked")
     @Override
     public <T> T getDialogResponse(IDialogChoice dialogSettings) {
-        Object selectedValue = JOptionPane.showInputDialog(null,
-                dialogSettings.getDialogText(), dialogSettings.getDialogTitle(),
-                JOptionPane.PLAIN_MESSAGE,
-                null,
-                dialogSettings.getDialogOptions(),
-                dialogSettings.getCurrentSelection());
-        return selectedValue == null
-                ? (T)dialogSettings.getCurrentSelection()
-                : (T)selectedValue;
+        Object selectedValue = JOptionPane.showInputDialog(null, dialogSettings.getDialogText(), dialogSettings.getDialogTitle(), JOptionPane.PLAIN_MESSAGE, null, dialogSettings.getDialogOptions(), dialogSettings.getCurrentSelection());
+        return (T) (selectedValue == null ? dialogSettings.getCurrentSelection() : selectedValue);
     }
 }

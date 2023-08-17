@@ -10,7 +10,7 @@ import model.command.CommandHandler.DrawHandler;
 import model.interfaces.IApplicationState;
 import model.interfaces.ICommand;
 import model.mouseUtilities.Point;
-import view.interfaces.APaintCanvas;
+import view.gui.APaintCanvas;
 
 
 public class Draw implements ICommand {

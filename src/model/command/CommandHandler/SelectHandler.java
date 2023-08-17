@@ -11,8 +11,8 @@ import model.interfaces.ICommand;
 import model.interfaces.IShape;
 import model.mouseUtilities.Point;
 import model.shapeUtilities.ExistingShape;
+import view.gui.APaintCanvas;
 import view.gui.UpdateCanvas;
-import view.interfaces.APaintCanvas;
 
 public class SelectHandler implements ICommand, IActiveShape {
     private APaintCanvas paintCanvas;

@@ -1,4 +1,4 @@
-package view.interfaces;
+package view.gui;
 
 // ydeng24@depaul.edu
 

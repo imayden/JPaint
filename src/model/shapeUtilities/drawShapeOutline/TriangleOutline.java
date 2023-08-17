@@ -1,13 +1,8 @@
 package model.shapeUtilities.drawShapeOutline;
 
-// Proxy Pattern
-
-// ydeng24@depaul.edu
-// Final Project
-
-import view.interfaces.APaintCanvas;
-
 import java.awt.*;
+
+import view.gui.APaintCanvas;
 
 public class TriangleOutline {
 
@@ -26,25 +21,20 @@ public class TriangleOutline {
         
         int[] outlineXCoords = new int[COORDINATES_COUNT];
         int[] outlineYCoords = new int[COORDINATES_COUNT];
-
-        if (xCoords[0] < xCoords[2]) {
-            outlineXCoords[0] = xCoords[0] - OFFSET;
-            outlineXCoords[1] = xCoords[1] - OFFSET;
-            outlineXCoords[2] = xCoords[2] + OFFSET_DIAGONAL;
-        } else {
-            outlineXCoords[2] = xCoords[2] - OFFSET_DIAGONAL;
-            outlineXCoords[1] = xCoords[1] + OFFSET;
-            outlineXCoords[0] = xCoords[0] + OFFSET;
-        }
-        if (yCoords[0] < yCoords[2]) {
-            outlineYCoords[0] = yCoords[0] - OFFSET_DIAGONAL;
-            outlineYCoords[1] = yCoords[1] + OFFSET;
-            outlineYCoords[2] = yCoords[2] + OFFSET;
-        } else {
-            outlineYCoords[2] = yCoords[2] - OFFSET;
-            outlineYCoords[1] = yCoords[1] - OFFSET;
-            outlineYCoords[0] = yCoords[0] + OFFSET_DIAGONAL;
-        }
+    
+        outlineXCoords[0] = xCoords[0] < xCoords[2] ? xCoords[0] - OFFSET : xCoords[0] + OFFSET;
+        outlineYCoords[0] = yCoords[0] < yCoords[2] ? yCoords[0] - OFFSET_DIAGONAL : yCoords[0] + OFFSET_DIAGONAL;
+    
+        // Adjust xCoords
+        outlineXCoords[1] = xCoords[1] < xCoords[0] ? xCoords[1] - OFFSET : xCoords[1] + OFFSET;
+        outlineXCoords[2] = xCoords[2] < xCoords[0] ? xCoords[2] - OFFSET_DIAGONAL : xCoords[2] + OFFSET_DIAGONAL;
+    
+        // Adjust yCoords
+        outlineYCoords[1] = yCoords[1] < yCoords[0] ? yCoords[1] - OFFSET : yCoords[1] + OFFSET;
+        outlineYCoords[2] = yCoords[2] < yCoords[0] ? yCoords[2] - OFFSET : yCoords[2] + OFFSET;
+    
         graphics2d.drawPolygon(outlineXCoords, outlineYCoords, COORDINATES_COUNT);
-    }
+    }    
+    
 }
+

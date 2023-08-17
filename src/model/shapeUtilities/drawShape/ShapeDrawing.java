@@ -1,6 +1,10 @@
 package model.shapeUtilities.drawShape;
 
-// Strategy Pattern
+// Design Pattern Used: Strategy
+
+// SE450 Final Project
+// ydeng24@depaul.edu
+// © 2023 Ayden Deng
 
 import model.interfaces.IShape;
 

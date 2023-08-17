@@ -1,16 +1,21 @@
 package model.shapeUtilities.drawShape;
 
+// Design Pattern Used: Template Method, Factory, State, Command, Adapter, Strategy
+
+// SE450 Final Project
+// ydeng24@depaul.edu
+// © 2023 Ayden Deng
+
 import model.interfaces.IShape;
 import model.mouseUtilities.Point;
 import model.shapeUtilities.ActiveShape;
 import model.shapeUtilities.ExistingShape;
+import view.gui.APaintCanvas;
 import view.gui.UpdateCanvas;
-import view.interfaces.APaintCanvas;
 
 import java.awt.*;
 import java.util.LinkedList;
 
-// Draw ellipse
 public class Ellipse implements IShape {
     private APaintCanvas paintCanvas;
     private Point startPoint;
@@ -49,26 +54,6 @@ public class Ellipse implements IShape {
         this(shape.getStartPoint(), shape.getEndPoint(), shape.getPaintCanvas(),
              shape.getShadeType(), shape.getPrimaryColor(), shape.getSecondaryColor());
     }
-
-    // @Override
-    // public void drawShape() {
-
-    //     Graphics2D graphics2d = paintCanvas.getGraphics2D();
-    //     if (shadeType.equals("filled")) {
-    //         graphics2d.setColor(primaryColor);
-    //         graphics2d.fillOval(startPointX, startPointY, width, height);
-    //     } else if (shadeType == "outline") {
-    //         graphics2d.setStroke(new BasicStroke(5));
-    //         graphics2d.setColor(primaryColor);
-    //         graphics2d.drawOval(startPointX, startPointY, width, height);
-    //     } else if (shadeType == "filledAndOutline") {
-    //         graphics2d.setColor(primaryColor);
-    //         graphics2d.fillOval(startPointX, startPointY, width, height);
-    //         graphics2d.setStroke(new BasicStroke(5));
-    //         graphics2d.setColor(secondaryColor);
-    //         graphics2d.drawOval(startPointX, startPointY, width, height);
-    //     }
-    // }
 
     @Override
     public void drawShape() {

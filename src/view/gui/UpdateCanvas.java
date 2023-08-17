@@ -1,14 +1,17 @@
 package view.gui;
 
-// ydeng24@depaul.edu
+// Design Pattern Used: Template
 
-import model.*;
+// SE450 Final Project
+// ydeng24@depaul.edu
+// © 2023 Ayden Deng
+
 import model.command.CommandHandler.PasteHandler;
 import model.interfaces.IShape;
 import model.shapeUtilities.ActiveShape;
 import model.shapeUtilities.ExistingShape;
 import model.shapeUtilities.drawShapeOutline.OutlineHandler;
-import view.interfaces.APaintCanvas;
+
 import java.awt.*;
 
 public abstract class UpdateCanvas {
@@ -20,14 +23,11 @@ public abstract class UpdateCanvas {
         graphics2d.setColor(Color.white);
         graphics2d.fillRect(0, 0, paintCanvas.getWidth(), paintCanvas.getHeight());
 
-        // Redraw updated shapes
         for (IShape shape : ExistingShape.shapeList) {
             shape.drawShape();
 
-            // if (Paste.isIsPasteSelected() && ActiveShape.activeShape.contains(shape)) {
             if (PasteHandler.getIsPasteSelected() && ActiveShape.activeShape.contains(shape)) {
                 selectedShapeOutline.outline();
-                // Paste.setIsPasteSelected(false);
                 PasteHandler.setIsPasteSelected(false);
             }
         }

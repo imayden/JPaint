@@ -12,7 +12,7 @@ import model.shadeUtilities.ShadeUtils;
 import model.shapeUtilities.ExistingShape;
 import model.shapeUtilities.ShapeFactory;
 import model.shapeUtilities.drawShape.ShapeDrawing;
-import view.interfaces.APaintCanvas;
+import view.gui.APaintCanvas;
 import model.colorUtilities.ColorUtils;
 import model.command.CommandInvoker;
 

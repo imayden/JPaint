@@ -1,4 +1,3 @@
-
 package model.command;
 
 // Design Pattern Used: Command
@@ -11,8 +10,9 @@ import model.command.CommandHandler.MoveHandler;
 import model.interfaces.IShape;
 import model.interfaces.IUndoable;
 import model.mouseUtilities.Point;
+import view.gui.APaintCanvas;
 import view.gui.UpdateCanvas;
-import view.interfaces.APaintCanvas;
+
 import java.util.LinkedList;
 
 public class Move implements IUndoable {

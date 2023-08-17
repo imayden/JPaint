@@ -13,8 +13,9 @@ import model.interfaces.IShape;
 import model.interfaces.IUndoable;
 import model.mouseUtilities.Point;
 import model.shapeUtilities.ExistingShape;
+import view.gui.APaintCanvas;
 import view.gui.UpdateCanvas;
-import view.interfaces.APaintCanvas;
+
 import java.util.LinkedList;
 
 public class MoveHandler implements ICommand, IUndoable, IActiveShape {

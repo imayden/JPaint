@@ -1,5 +1,11 @@
 package model.mouseUtilities;
 
+// Design Pattern Used: Strategy, Proxy 
+
+// SE450 Final Project
+// ydeng24@depaul.edu
+// © 2023 Ayden Deng
+
 import model.command.Draw;
 import model.command.CommandHandler.MoveHandler;
 import model.command.CommandHandler.SelectHandler;
@@ -7,7 +13,7 @@ import model.interfaces.IApplicationState;
 import model.interfaces.ICommand;
 import model.interfaces.IOutlineHandler;
 import model.shapeUtilities.drawShapeOutline.OutlineHanderProxy;
-import view.interfaces.APaintCanvas;
+import view.gui.APaintCanvas;
 
 public class ActiveMouseMode {
 
@@ -34,11 +40,9 @@ public class ActiveMouseMode {
                 command = new Draw(startPoint, endPoint, paintCanvas, appState);
                 break;
             case SELECT:
-                // command = new Select(startPoint, endPoint, paintCanvas);
                 command = new SelectHandler(startPoint, endPoint, paintCanvas);
                 break;
             case MOVE:
-                // command = new Move(startPoint, endPoint, paintCanvas);
                 command = new MoveHandler(startPoint, endPoint, paintCanvas);
                 break;
             default:

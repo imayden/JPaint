@@ -1,5 +1,11 @@
 package model.shapeUtilities.drawShapeOutline;
 
+// Design Pattern Used: Proxy
+
+// SE450 Final Project
+// ydeng24@depaul.edu
+// © 2023 Ayden Deng
+
 import model.command.CommandHandler.MoveHandler;
 import model.command.CommandHandler.SelectHandler;
 import model.interfaces.ICommand;
@@ -16,22 +22,14 @@ public class OutlineHanderProxy implements IOutlineHandler {
 
     @Override
     public void outline() {
-        switch(cmd.getClass().getSimpleName()) {
-            // case "Select":
-            case "SelectHandler":
-                // drawOutlineIf(Select.isSelected());
-                drawOutlineIf(SelectHandler.isSelected());
-                break;
-            // case "Move":
-            case "MoveHandler":
-                // drawOutlineIf(Move.isMoveSelected());
-                drawOutlineIf(MoveHandler.isMoveSelected());
-                break;
-            case "ApplicationState":
-                drawOutlineIf(ApplicationState.isUndoSelected() || ApplicationState.isRedoSelected());
-                break;
-            default:
-                System.out.println("Other actions");
+        if (cmd instanceof SelectHandler) {
+            drawOutlineIf(SelectHandler.isSelected());
+            System.out.println("Action: Select");
+        } else if (cmd instanceof MoveHandler) {
+            drawOutlineIf(MoveHandler.isMoveSelected());
+            System.out.println("Action: Move");
+        } else if (cmd instanceof ApplicationState) {
+            drawOutlineIf(ApplicationState.isUndoSelected() || ApplicationState.isRedoSelected());
         }
     }
 

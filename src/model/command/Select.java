@@ -9,7 +9,7 @@ package model.command;
 import model.command.CommandHandler.SelectHandler;
 import model.interfaces.ICommand;
 import model.mouseUtilities.Point;
-import view.interfaces.APaintCanvas;
+import view.gui.APaintCanvas;
 
 public class Select implements ICommand {
     private APaintCanvas paintCanvas;

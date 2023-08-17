@@ -1,16 +1,10 @@
 package model.command;
 
-// Design Pattern Used: Command
-
-// SE450 Final Project
-// ydeng24@depaul.edu
-// © 2023 Ayden Deng
-
-import view.interfaces.APaintCanvas;
 import java.util.LinkedList;
 import model.command.CommandHandler.PasteHandler;
 import model.interfaces.IShape;
 import model.interfaces.IUndoable;
+import view.gui.APaintCanvas;
 
 public class Paste implements IUndoable {
     private LinkedList<IShape> shapetoPaste;

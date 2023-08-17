@@ -10,8 +10,9 @@ import model.command.CommandInvoker;
 import model.interfaces.*;
 import model.shapeUtilities.ExistingShape;
 import model.shapeUtilities.drawShapeOutline.OutlineHandler;
+import view.gui.APaintCanvas;
 import view.gui.UpdateCanvas;
-import view.interfaces.APaintCanvas;
+
 import java.util.LinkedList;
 
 public class DeletionHandler implements IClipboard, IActiveShape, IUndoable  {

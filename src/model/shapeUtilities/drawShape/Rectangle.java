@@ -1,15 +1,21 @@
 package model.shapeUtilities.drawShape;
 
+// Design Pattern Used: Template Method, Factory, State, Command, Adapter, Strategy
+
+// SE450 Final Project
+// ydeng24@depaul.edu
+// © 2023 Ayden Deng
+
 import model.interfaces.IShape;
 import model.mouseUtilities.Point;
 import model.shapeUtilities.ActiveShape;
 import model.shapeUtilities.ExistingShape;
+import view.gui.APaintCanvas;
 import view.gui.UpdateCanvas;
-import view.interfaces.APaintCanvas;
+
 import java.awt.*;
 import java.util.LinkedList;
 
-// Draw rectangle
 public class Rectangle implements IShape {
 
     private APaintCanvas paintCanvas;

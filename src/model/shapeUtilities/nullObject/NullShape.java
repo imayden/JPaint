@@ -1,9 +1,16 @@
-package model.nullObject;
+package model.shapeUtilities.nullObject;
+
+// Design Pattern Used: Null Object
+
+// SE450 Final Project
+// ydeng24@depaul.edu
+// © 2023 Ayden Deng
 
 import model.interfaces.IShape;
 import model.mouseUtilities.Point;
+import view.gui.APaintCanvas;
 import view.gui.PaintCanvas;
-import view.interfaces.APaintCanvas;
+
 import java.awt.*;
 import java.util.LinkedList;
 

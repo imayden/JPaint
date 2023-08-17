@@ -15,8 +15,9 @@ import model.mouseUtilities.Point;
 import model.shapeUtilities.ActiveShape;
 import model.shapeUtilities.ExistingShape;
 import model.shapeUtilities.drawShape.*;
+import view.gui.APaintCanvas;
 import view.gui.UpdateCanvas;
-import view.interfaces.APaintCanvas;
+
 import java.util.LinkedList;
 
 public class PasteHandler implements IClipboard, ICommand, IUndoable {

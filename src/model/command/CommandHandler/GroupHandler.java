@@ -18,8 +18,10 @@ import model.shapeUtilities.drawShapeOutline.RectangleOutline;
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
+
+import view.gui.APaintCanvas;
 import view.gui.UpdateCanvas;
-import view.interfaces.APaintCanvas;
+
 import java.awt.*;
 
 public class GroupHandler implements IShape {

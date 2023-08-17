@@ -1,11 +1,13 @@
 package model.mouseUtilities;
 
-// Singleton Pattern
+// Design Pattern Used: Singleton
 
+// SE450 Final Project
 // ydeng24@depaul.edu
+// © 2023 Ayden Deng
 
 import model.persistence.ApplicationState;
-import view.interfaces.APaintCanvas;
+import view.gui.APaintCanvas;
 
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;

@@ -1,11 +1,17 @@
 package model.shapeUtilities;
 
+// Design Pattern Used: Factory
+
+// SE450 Final Project
+// ydeng24@depaul.edu
+// © 2023 Ayden Deng
+
 import model.interfaces.IApplicationState;
 import model.interfaces.IShape;
 import model.mouseUtilities.Point;
-import model.nullObject.NullShape;
 import model.shapeUtilities.drawShape.*;
-import view.interfaces.APaintCanvas;
+import model.shapeUtilities.nullObject.NullShape;
+import view.gui.APaintCanvas;
 
 import java.awt.Color;
 

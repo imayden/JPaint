@@ -6,30 +6,47 @@ package main;
 
 import controller.JPaintController;
 import controller.interfaces.IJPaintController;
-import model.colorUtilities.ShapeColorFactory;
 import model.mouseUtilities.MouseListener;
 import model.persistence.ApplicationState;
+import view.gui.APaintCanvas;
 import view.gui.Gui;
 import view.gui.GuiWindow;
 import view.gui.PaintCanvas;
 import view.interfaces.IGuiWindow;
-import view.interfaces.APaintCanvas;
 import view.interfaces.IUiModule;
 
 public class Main {
     public static void main(String[] args) {
-        APaintCanvas paintCanvas = new PaintCanvas();
-        IGuiWindow guiWindow = new GuiWindow(paintCanvas);
-        IUiModule uiModule = new Gui(guiWindow);
-        ApplicationState appState = new ApplicationState(uiModule);
-
-        IJPaintController controller = new JPaintController(uiModule, appState);
-        controller.setup();
-
-        ShapeColorFactory.getMap();
+        ApplicationSetup setup = new ApplicationSetup();
+        setup.initialize();
 
         MouseListener mouseListener = MouseListener.getInstance();
-        paintCanvas.addMouseListener(mouseListener);
-        mouseListener.setSettings(paintCanvas, appState);
+        setup.getPaintCanvas().addMouseListener(mouseListener);
+        mouseListener.setSettings(setup.getPaintCanvas(), setup.getAppState());
+    }
+}
+
+class ApplicationSetup {
+    private APaintCanvas paintCanvas;
+    private IGuiWindow guiWindow;
+    private IUiModule uiModule;
+    private ApplicationState appState;
+    private IJPaintController controller;
+
+    public void initialize() {
+        paintCanvas = new PaintCanvas();
+        guiWindow = new GuiWindow(paintCanvas);
+        uiModule = new Gui(guiWindow);
+        appState = new ApplicationState(uiModule);
+        controller = new JPaintController(uiModule, appState);
+        controller.setup();
+    }
+
+    public APaintCanvas getPaintCanvas() {
+        return paintCanvas;
+    }
+
+    public ApplicationState getAppState() {
+        return appState;
     }
 }
