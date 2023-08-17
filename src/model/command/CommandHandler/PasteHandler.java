@@ -1,11 +1,12 @@
 package model.command.CommandHandler;
 
-import model.command.CommandInvoker;
+// Design Pattern Used: Command, Memento, State, Factory
 
 // SE450 Final Project
 // ydeng24@depaul.edu
 // © 2023 Ayden Deng
 
+import model.command.CommandInvoker;
 import model.interfaces.IClipboard;
 import model.interfaces.ICommand;
 import model.interfaces.IShape;

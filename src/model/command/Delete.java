@@ -1,11 +1,11 @@
 package model.command;
-
-import model.command.CommandHandler.DeletionHandler;
+// Design Pattern Used: Command
 
 // SE450 Final Project
 // ydeng24@depaul.edu
 // © 2023 Ayden Deng
 
+import model.command.CommandHandler.DeletionHandler;
 import model.interfaces.ICommand;
 import model.interfaces.IUndoable;
 

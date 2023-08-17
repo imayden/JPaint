@@ -1,11 +1,12 @@
 package model.command.CommandHandler;
 
-import model.command.CommandInvoker;
+// Design Pattern Used: Command, Memento
 
 // SE450 Final Project
 // ydeng24@depaul.edu
 // © 2023 Ayden Deng
 
+import model.command.CommandInvoker;
 import model.interfaces.IActiveShape;
 import model.interfaces.ICommand;
 import model.interfaces.IShape;
@@ -150,8 +151,6 @@ public class MoveHandler implements ICommand, IUndoable, IActiveShape {
     public APaintCanvas getPaintCanvas() {
         return paintCanvas;
     }
-
-
     
     public LinkedList<IShape> getShapesToMove() {
         return shapesToMove;

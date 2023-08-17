@@ -1,12 +1,13 @@
 
 package model.command;
 
-import model.command.CommandHandler.MoveHandler;
+// Design Pattern Used: Command
 
 // SE450 Final Project
 // ydeng24@depaul.edu
 // © 2023 Ayden Deng
 
+import model.command.CommandHandler.MoveHandler;
 import model.interfaces.IShape;
 import model.interfaces.IUndoable;
 import model.mouseUtilities.Point;
