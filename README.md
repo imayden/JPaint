@@ -271,7 +271,7 @@ JPaint/src
 ![redo](img/redo.png)
 ![undo](img/undo.png)
 ## 6.3 Select 
-###6.3.1 Single Selecting
+### 6.3.1 Single Selecting
 ![sselect](img/sselect.png)
 ### 6.3.2 Multiple Selecting
 ![mselect](img/mselect.png)
