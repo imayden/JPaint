@@ -4,7 +4,7 @@
 - Student ID: 2121072
 - GitHub Repository: https://github.com/imayden/JPaint.git
 - Session: SE450: 2023 Summer 10-Week Session
-## 2. Features Implemented
+# 2. Features Implemented
 1. Shape Drawing
     - Shape types of drawing:
       - Rectangle
