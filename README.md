@@ -274,7 +274,7 @@ JPaint/src
 ###6.3.1 Single Selecting
 ![sselect](img/sselect.png)
 ### 6.3.2 Multiple Selecting
-![mselect](img/ mselect.png)
+![mselect](img/mselect.png)
 ## 6.4 Move
 ![move](img/move.png)
 ## 6.5 Copy/Paste
