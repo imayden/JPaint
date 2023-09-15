@@ -285,3 +285,5 @@ JPaint/src
 ![group](img/group.png)
 ## 6.8 Ungroup
 ![ungroup](img/ungroup.png)
+
+
