@@ -1,5 +1,4 @@
 # 1. Project Information
-- Author: Ayden Deng
 - GitHub Repository: https://github.com/imayden/JPaint.git
 - Associated with DePaul University
 # 2. Features Implemented
