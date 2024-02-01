@@ -1,7 +1,7 @@
 # 1. Project Information
 - GitHub Repository: https://github.com/imayden/JPaint.git
 - Associated with DePaul University
-    
+     
 # 2. Features Implemented
 1. Shape Drawing
     - Shape types of drawing:
