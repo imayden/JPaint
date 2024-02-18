@@ -9,7 +9,7 @@
       - Ellipse
       - Triangle
     - Shade types of drawing:
-      - Filled
+      - Filled 
       - Outlined
       - Filled and outlined
     - Utilize a Range of Colors for Drawing:
