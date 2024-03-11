@@ -19,7 +19,7 @@
 2. Undo/Redo Operations
     - Perform undo and redo operations for actions such as drawing, deletion, and other relevant tasks by utilizing the dedicated UNDO and REDO buttons.
     - Fully Implemented? Yes
-3. Shape Selecting
+3. Shape Selecting 
     - Single Shape Selection
       - Facilitate the selection of an individual shape by adjusting the mouse mode to "SELECT," subsequently clicking on the intended shape to effectuate the selection.
     - Multiple Shape Selection
