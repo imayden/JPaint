@@ -4,7 +4,7 @@
      
 # 2. Features Implemented
 1. Shape Drawing
-    - Shape types of drawing:
+    - Shape types of drawing: 
       - Rectangle
       - Ellipse
       - Triangle
